@@ -1,0 +1,540 @@
+{% stylesheet %}
+  .upcoming-events-container {
+    padding: 120px 0;
+    color: #fff; /* replace $white */
+    position: relative;
+    overflow: hidden;
+  }
+
+  .upcoming-events-container .gradient-blob {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.5;
+    filter: blur(307px);
+    background: linear-gradient(90deg, #f8b133, #ff7e5f); /* replace $primary-gradient */
+    z-index: 0;
+  }
+
+  .upcoming-events-container .gradient-blob.blob-1 {
+    width: 720px;
+    height: 640px;
+    top: -300px;
+    left: -400px;
+    filter: blur(280px);
+    opacity: 0.5;
+  }
+
+  .upcoming-events-container .upcoming-events-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 100%;
+    margin-bottom: 22px;
+  }
+
+  @media (min-width: 900px) {
+    .upcoming-events-container .upcoming-events-title {
+      font-size: 56px;
+      margin-bottom: 56px;
+    }
+  }
+
+  .upcoming-events-container .search-section {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 900px) {
+    .upcoming-events-container .search-section {
+      margin-bottom: 56px;
+    }
+  }
+
+  .upcoming-events-container .search-section .search-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 100%;
+    margin-bottom: 22px;
+  }
+
+  @media (min-width: 900px) {
+    .upcoming-events-container .search-section .search-title {
+      font-size: 32px;
+      margin-bottom: 32px;
+    }
+  }
+
+  .upcoming-events-container .search-section .search-input-container {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05); /* replace $white-05 */
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* replace $white-1 */
+    padding: 10px 10px 10px 16px;
+  }
+
+  @media (min-width: 500px) {
+    .upcoming-events-container .search-section .search-input-container {
+      padding: 16px 16px 16px 32px;
+    }
+  }
+
+  .upcoming-events-container .search-section .search-input-container .search-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: rgba(0, 0, 0, 0.5); /* replace $black-50 */
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 100%;
+  }
+
+  @media (min-width: 500px) {
+    .upcoming-events-container .search-section .search-input-container .search-input {
+      font-size: 20px;
+    }
+  }
+
+  .upcoming-events-container .search-section .search-input-container .search-input::placeholder {
+    color: rgba(0, 0, 0, 0.5); /* replace $black-50 */
+  }
+
+  .upcoming-events-container .search-section .search-input-container .search-input:focus {
+    outline: none;
+  }
+
+  .upcoming-events-container .search-section .search-input-container .search-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #f8b133, #ff7e5f); /* replace $primary-gradient */
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+
+  .upcoming-events-container .search-section .search-input-container .search-button:hover {
+    opacity: 0.9;
+  }
+
+  .upcoming-events-container .search-section .search-input-container .search-button .search-svg {
+    width: 20px;
+    max-height: 20px;
+  }
+
+  @media (min-width: 500px) {
+    .upcoming-events-container .search-section .search-input-container .search-button {
+      width: 60px;
+      height: 60px;
+    }
+    .upcoming-events-container .search-section .search-input-container .search-button .search-svg {
+      width: 30px;
+      max-height: 30px;
+    }
+  }
+
+  .upcoming-events-container .events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .upcoming-events-container .events-list .event-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 32px;
+    overflow: hidden;
+  }
+
+  .upcoming-events-container .events-list .event-card:hover {
+    opacity: 0.9;
+  }
+
+  .upcoming-events-container .events-list .event-card:hover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 32px;
+    padding: 1px;
+    background: linear-gradient(80deg, #f8b133, #e5332a);
+
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+
+    pointer-events: none;
+  }
+
+  .upcoming-events-container .events-list .event-card.highlighted {
+    border-image-source: linear-gradient(90deg, #f8b133, #ff7e5f); /* replace $primary-gradient */
+    border-image-slice: 1;
+  }
+
+  .upcoming-events-container .events-list .event-card .event-gradient-bg {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 109px;
+    width: 832px;
+    height: 143px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #f8b133, #ff7e5f); /* replace $primary-gradient */
+    filter: blur(162px);
+    z-index: 0;
+  }
+
+  .upcoming-events-container .events-list .event-card .event-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  @media (max-width: 992px) {
+    .upcoming-events-container .events-list .event-card .event-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  .upcoming-events-container .events-list .event-card .event-content .event-image {
+    width: 309px;
+    height: 174px;
+    border-radius: 24px;
+    object-fit: cover;
+  }
+
+  @media (max-width: 576px) {
+    .upcoming-events-container .events-list .event-card .event-content .event-image {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .upcoming-events-container .events-list .event-card .event-content .event-divider {
+    width: 100px;
+    height: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* replace $white-2 */
+    transform: rotate(90deg);
+    opacity: 0.6;
+  }
+
+  @media (max-width: 992px) {
+    .upcoming-events-container .events-list .event-card .event-content .event-divider {
+      display: none;
+    }
+  }
+
+  .upcoming-events-container .events-list .event-card .event-content .event-details {
+    width: 380px;
+  }
+
+  @media (max-width: 992px) {
+    .upcoming-events-container .events-list .event-card .event-content .event-details {
+      width: 100%;
+    }
+  }
+
+  .upcoming-events-container .events-list .event-card .event-content .event-details .event-location {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 700;
+    line-height: 130%;
+    margin: 0;
+  }
+
+  @media (min-width: 900px) {
+    .upcoming-events-container .events-list .event-card .event-content .event-details .event-location {
+      font-size: 32px;
+    }
+  }
+
+  .upcoming-events-container .events-list .event-card .event-content .event-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    min-width: 189px;
+  }
+
+  @media (max-width: 992px) {
+    .upcoming-events-container .events-list .event-card .event-content .event-date {
+      flex-direction: row;
+      justify-content: center;
+      gap: 16px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .upcoming-events-container .events-list .event-card .event-content .event-date {
+      flex-direction: column;
+    }
+  }
+
+  .upcoming-events-container .events-list .event-card .event-content .event-date .date-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: #ffa500;
+    border-radius: 9.6px;
+  }
+
+  .upcoming-events-container .events-list .event-card .event-content .event-date .date-icon img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .upcoming-events-container .events-list .event-card .event-content .event-date .date-text {
+    font-family: Inter, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 130%;
+    color: rgb(244, 245, 247);
+    margin: 0px;
+  }
+
+  @media (max-width: 576px) {
+    .upcoming-events-container .events-list .event-card .event-content .event-date .date-text {
+      font-size: 18px;
+    }
+  }
+
+  .upcoming-events-container .view-all-btn {
+    background: linear-gradient(90deg, #f8b133, #ff7e5f); /* replace $primary-gradient */
+    border-radius: 30px;
+    border: none;
+    padding: 18px;
+    color: #fff; /* replace $white */
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 100%;
+    cursor: pointer;
+    transition: opacity 0.3s;
+  }
+
+  .upcoming-events-container .view-all-btn:hover {
+    opacity: 0.9;
+  }
+{% endstylesheet %}
+
+<div class="upcoming-events-container">
+  <div class="container">
+    <div class="gradient-blob blob-1"></div>
+    <!-- <div class="gradient-blob blob-3"></div> -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 class="upcoming-events-title">Upcoming Events</h1>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-12">
+        <div class="search-section">
+          <h3 class="search-title">Search</h3>
+          <div class="search-input-container">
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Enter States"
+            >
+            <button class="search-button">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="search-svg"
+              >
+                <path
+                  d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M21 21L16.65 16.65"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="events-list">
+        <!-- Event 1 -->
+        <div class="event-card">
+          <div class="event-gradient-bg"></div>
+          <div class="event-content">
+            <img
+              width=""
+              height=""
+              src="{{ 'event-image-1.png' | asset_url }}"
+              class="event-image"
+              alt="Berlin Event"
+            >
+            <div class="event-divider"></div>
+            <div class="event-details">
+              <h3 class="event-location">Berlin, Germany</h3>
+            </div>
+            <div class="event-divider"></div>
+            <div class="event-date">
+              <div class="date-icon">
+                <img width="" height="" src="{{ 'calendar-01.svg' | asset_url }}" alt="">
+              </div>
+              <p class="date-text">October 8, 2025</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="events-list">
+        <!-- Event 2 -->
+        <div class="event-card">
+          <div class="event-gradient-bg"></div>
+          <div class="event-content">
+            <img
+              width=""
+              height=""
+              src="{{ 'event-image-2.png' | asset_url }}"
+              class="event-image"
+              alt="Berlin Event"
+            >
+            <div class="event-divider"></div>
+            <div class="event-details">
+              <h3 class="event-location">MUNICH</h3>
+            </div>
+            <div class="event-divider"></div>
+            <div class="event-date">
+              <div class="date-icon">
+                <img width="" height="" src="{{ 'calendar-01.svg' | asset_url }}" alt="">
+              </div>
+              <p class="date-text">October 11</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="events-list">
+        <!-- Event 3 -->
+        <div class="event-card">
+          <div class="event-gradient-bg"></div>
+          <div class="event-content">
+            <img
+              width=""
+              height=""
+              src="{{ 'event-image-3.png' | asset_url }}"
+              class="event-image"
+              alt="Berlin Event"
+            >
+            <div class="event-divider"></div>
+            <div class="event-details">
+              <h3 class="event-location">NUREMBERG</h3>
+            </div>
+            <div class="event-divider"></div>
+            <div class="event-date">
+              <div class="date-icon">
+                <img width="" height="" src="{{ 'calendar-01.svg' | asset_url }}" alt="">
+              </div>
+              <p class="date-text">October 18, 2025</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="events-list">
+        <!-- Event 1 -->
+        <div class="event-card">
+          <div class="event-gradient-bg"></div>
+          <div class="event-content">
+            <img
+              width=""
+              height=""
+              src="{{ 'event-image-4.png' | asset_url }}"
+              class="event-image"
+              alt="Berlin Event"
+            >
+            <div class="event-divider"></div>
+            <div class="event-details">
+              <h3 class="event-location">LEIPZIG</h3>
+            </div>
+            <div class="event-divider"></div>
+            <div class="event-date">
+              <div class="date-icon">
+                <img width="" height="" src="{{ 'calendar-01.svg' | asset_url }}" alt="">
+              </div>
+              <p class="date-text">October 18, 2025</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="events-list">
+        <!-- Event 1 -->
+        <div class="event-card">
+          <div class="event-gradient-bg"></div>
+          <div class="event-content">
+            <img
+              width=""
+              height=""
+              src="{{ 'event-image-5.png' | asset_url }}"
+              class="event-image"
+              alt="Berlin Event"
+            >
+            <div class="event-divider"></div>
+            <div class="event-details">
+              <h3 class="event-location">HAMBURG</h3>
+            </div>
+            <div class="event-divider"></div>
+            <div class="event-date">
+              <div class="date-icon">
+                <img width="" height="" src="{{ 'calendar-01.svg' | asset_url }}" alt="">
+              </div>
+              <p class="date-text">October 25, 2025</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-16">
+      <div class="col-12 text-center">
+        <a href="/collection-page.html">
+          <button class="view-all-btn">View All</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Upcoming Events Section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Upcoming Events Section",
+      "category": "Sections"
+    }
+  ]
+}
+{% endschema %}

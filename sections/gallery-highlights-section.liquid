@@ -1,0 +1,322 @@
+{% stylesheet %}
+  .gallery-highlights-container {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    align-items: center;
+    width: 100%;
+    padding: 120px 0;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .gallery-highlights-container .gallery-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .gallery-highlights-container .gallery-header .gallery-title {
+    color: #fff; /* replace $white */
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    line-height: 1;
+    width: 475px;
+    margin: 0;
+    font-size: 30px;
+  }
+
+  @media (min-width: 900px) {
+    .gallery-highlights-container .gallery-header .gallery-title {
+      font-size: 56px !important;
+    }
+  }
+
+  .gallery-highlights-container .gallery-header .gallery-subtitle {
+    color: #666666; /* replace $black-300 */
+    font-family: 'Inter-Regular', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 400;
+    width: 409px;
+    margin: 0;
+  }
+
+  .gallery-highlights-container .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    width: 100%;
+  }
+
+  .gallery-highlights-container .gallery-grid .gallery-item {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .gallery-highlights-container .gallery-grid .gallery-item .gallery-image {
+    border-radius: 24px;
+    width: 100%;
+    height: 354px;
+    object-fit: cover;
+    background: linear-gradient(to left, #d9d9d9, #d9d9d9);
+  }
+
+  .gallery-highlights-container .gallery-grid .gallery-item .gallery-caption {
+    color: #666666; /* replace $black-300 */
+    font-family: 'Inter-Regular', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  .gallery-highlights-container .view-all-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 30px;
+    padding: 18px 20px;
+    width: 198px;
+    height: 56px;
+    cursor: pointer;
+    background: transparent;
+
+    font-family: 'Inter-Regular', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1;
+
+    background: linear-gradient(90deg, #f8b133 0%, #e5332a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+
+    transition: all 0.3s ease;
+  }
+
+  .gallery-highlights-container .view-all-button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    padding: 1px;
+    background: linear-gradient(90deg, #f8b133 0%, #e5332a 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .gallery-highlights-container .view-all-button:hover {
+    opacity: 0.9;
+    transform: scale(1.03);
+  }
+
+  /* Responsive Styles */
+
+  @media (max-width: 1200px) {
+    .gallery-highlights-container {
+      padding: 80px 100px;
+    }
+
+    .gallery-highlights-container .gallery-header {
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .gallery-highlights-container .gallery-header .gallery-title,
+    .gallery-highlights-container .gallery-header .gallery-subtitle {
+      width: 100%;
+    }
+
+    .gallery-highlights-container .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .gallery-highlights-container {
+      padding: 60px 24px;
+    }
+
+    .gallery-highlights-container .gallery-header {
+      text-align: center;
+      align-items: center;
+    }
+
+    .gallery-highlights-container .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery-highlights-container .gallery-grid .gallery-item {
+      align-items: center;
+      text-align: center;
+    }
+
+    .gallery-highlights-container .gallery-grid .gallery-item .gallery-caption {
+      font-size: 16px;
+    }
+
+    .gallery-highlights-container .gallery-grid .gallery-item .gallery-image {
+      height: auto;
+      max-height: 280px;
+    }
+
+    .gallery-highlights-container .view-all-button {
+      width: 100%;
+      max-width: 240px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .gallery-highlights-container {
+      padding: 40px 16px;
+    }
+
+    .gallery-highlights-container .gallery-title {
+      font-size: 36px;
+    }
+
+    .gallery-highlights-container .gallery-subtitle {
+      font-size: 16px;
+    }
+
+    .gallery-highlights-container .gallery-grid {
+      gap: 24px;
+    }
+
+    .gallery-highlights-container .gallery-grid .gallery-item .gallery-image {
+      max-height: 220px;
+    }
+
+    .gallery-highlights-container .gallery-grid .gallery-item .gallery-caption {
+      font-size: 14px;
+    }
+
+    .gallery-highlights-container .view-all-button {
+      font-size: 16px;
+      height: 48px;
+    }
+  }
+{% endstylesheet %}
+
+<div class="gallery-highlights-container">
+  <div class="gallery-header">
+    <h2 class="gallery-title">Gallery Highlights</h2>
+    <p class="gallery-subtitle">
+      Every lantern holds a story — here's a glimpse into the magic, joy, and light from past festivals.
+    </p>
+  </div>
+
+  <div class="gallery-grid">
+    <!-- First Row -->
+    <div class="gallery-item">
+      <img
+        width=""
+        height=""
+        src="{{ 'gallery-image-1.png' | asset_url }}"
+        alt="Glowing lanterns on water"
+        class="gallery-image"
+      >
+      <p class="gallery-caption">Thousands of glowing lanterns floating peacefully across the water</p>
+    </div>
+
+    <div class="gallery-item flex-column-reverse flex-md-column">
+      <p class="gallery-caption">Faces and heartfelt messages captured at cities across the world</p>
+      <img
+        width=""
+        height=""
+        src="{{ 'gallery-image-2.png' | asset_url }}"
+        alt="Faces and messages"
+        class="gallery-image"
+      >
+    </div>
+
+    <div class="gallery-item">
+      <img
+        width=""
+        height=""
+        src="{{ 'gallery-image-3.png' | asset_url }}"
+        alt="Sunset festival moments"
+        class="gallery-image"
+      >
+      <p class="gallery-caption">Sunset moments with live music, laughter, and food</p>
+    </div>
+
+    <div class="gallery-item flex-column-reverse flex-md-column">
+      <p class="gallery-caption">Couples, families, and friends sharing unforgettable memories</p>
+      <img
+        width=""
+        height=""
+        src="{{ 'gallery-image-4.png' | asset_url }}"
+        alt="People enjoying festival"
+        class="gallery-image"
+      >
+    </div>
+
+    <!-- Second Row -->
+    <div class="gallery-item">
+      <img
+        width=""
+        height=""
+        src="{{ 'gallery-image-5.png' | asset_url }}"
+        alt="Sunset festival moments"
+        class="gallery-image"
+      >
+      <p class="gallery-caption">Sunset moments with live music, laughter, and food</p>
+    </div>
+
+    <div class="gallery-item flex-column-reverse flex-md-column">
+      <p class="gallery-caption">Couples, families, and friends sharing unforgettable memories</p>
+      <img
+        width=""
+        height=""
+        src="{{ 'gallery-image-6.png' | asset_url }}"
+        alt="People enjoying festival"
+        class="gallery-image"
+      >
+    </div>
+
+    <div class="gallery-item">
+      <img
+        width=""
+        height=""
+        src="{{ 'gallery-image-7.png' | asset_url }}"
+        alt="Glowing lanterns on water"
+        class="gallery-image"
+      >
+      <p class="gallery-caption">Thousands of glowing lanterns floating peacefully across the water</p>
+    </div>
+
+    <div class="gallery-item flex-column-reverse flex-md-column">
+      <p class="gallery-caption">Faces and heartfelt messages captured at cities across the world</p>
+      <img
+        width=""
+        height=""
+        src="{{ 'gallery-image-8.png' | asset_url }}"
+        alt="Faces and messages"
+        class="gallery-image"
+      >
+    </div>
+  </div>
+
+  <button class="view-all-button">View All Moments</button>
+</div>
+
+{% schema %}
+{
+  "name": "Gallery Highlights",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Gallery Highlights"
+    }
+  ]
+}
+{% endschema %}

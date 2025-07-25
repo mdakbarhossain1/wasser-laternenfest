@@ -1,0 +1,256 @@
+{% stylesheet %}
+  .about-us-water-lantern {
+    padding: 60px 0px;
+  }
+  .about-section {
+    position: relative;
+    overflow: hidden;
+    padding: 120px 0;
+    color: #fff;
+  }
+
+  .about-section .gradient-blob {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.5;
+    filter: blur(307px);
+    background: linear-gradient(90deg, #f8b133, #ff7e5f); /* Replace with your actual $primary-gradient */
+    z-index: 0;
+  }
+
+  .about-section .gradient-blob.blob-3 {
+    width: 720px;
+    height: 640px;
+    bottom: -300px;
+    left: -400px;
+    filter: blur(280px);
+    opacity: 0.5;
+  }
+
+  .about-section .content-wrapper {
+    position: relative;
+    z-index: 1;
+  }
+
+  .about-section .section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+
+  .about-section .section-description {
+    color: rgb(163, 167, 189);
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 40px;
+  }
+
+  .about-section .stats-container {
+    display: flex;
+    gap: 40px;
+    margin-top: 56px;
+  }
+
+  .about-section .stats-container .stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .about-section .stats-container .stat-item .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 56px;
+    background: linear-gradient(90deg, #f8b133, #ff7e5f);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .about-section .stats-container .stat-item .stat-label {
+    font-size: 24px;
+  }
+
+  .about-section .stats-container .stat-divider {
+    width: 1px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.3);
+    align-self: center;
+  }
+
+  .about-section .image-container {
+    position: relative;
+    border-radius: 32px;
+    overflow: hidden;
+    height: 613px;
+  }
+
+  .about-section .image-container .main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 1199.98px) {
+    .about-section {
+      padding: 80px 0;
+    }
+
+    .about-section .section-title {
+      font-size: 48px;
+    }
+
+    .about-section .image-container {
+      height: 500px;
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    .about-section {
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .about-section .section-title {
+      font-size: 40px;
+    }
+
+    .about-section .section-description {
+      font-size: 16px;
+    }
+
+    .about-section .btn-learn-more {
+      margin: 0 auto;
+    }
+
+    .about-section .stats-container {
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .about-section .stats-container .stat-item .stat-number {
+      font-size: 36px;
+    }
+
+    .about-section .stats-container .stat-item .stat-label {
+      font-size: 20px;
+    }
+
+    .about-section .image-container {
+      margin-top: 40px;
+      height: 400px;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .about-section {
+      padding: 40px 0;
+    }
+
+    .about-section .section-title {
+      font-size: 32px;
+    }
+
+    .about-section .stats-container {
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .about-section .stats-container .stat-divider {
+      display: none;
+    }
+
+    .about-section .stats-container .stat-item {
+      align-items: center;
+      text-align: center;
+    }
+
+    .about-section .image-container {
+      height: 350px;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .about-section .section-title {
+      font-size: 28px;
+    }
+
+    .about-section .section-description {
+      font-size: 15px;
+    }
+
+    .about-section .btn-learn-more {
+      width: 140px;
+      height: 50px;
+      font-size: 16px;
+    }
+
+    .about-section .image-container {
+      height: 300px;
+    }
+  }
+{% endstylesheet %}
+
+<div class="home-about-container about-section">
+  <div class="container">
+    <!--
+      <div class="gradient-blob blob-1"></div>
+      <div class="gradient-blob blob-2"></div>
+    -->
+    <div class="gradient-blob blob-3"></div>
+
+    <div class="row align-items-center">
+      <div class="col-lg-6 content-wrapper">
+        <h2 class="section-title">
+          What Is the Water <br>
+          Lantern Festival?
+        </h2>
+        <p class="section-description">
+          The Water Lantern Festival is a family-friendly event that brings people together to celebrate hope, peace,
+          and connection. Participants design their own lanterns.
+        </p>
+        <button class="btn btn-gradient">Learn More</button>
+
+        <div class="stats-container">
+          <div class="stat-item">
+            <div class="stat-number">32+</div>
+            <div class="stat-label">Session</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-number">99%</div>
+            <div class="stat-label">Event Success</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="image-container">
+          <img
+            src="{{ 'about-section.png' | asset_url }}"
+            alt="Water Lantern Festival"
+            class="main-image"
+            width=""
+            height=""
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Lantern Festival",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Lantern Festival"
+    }
+  ]
+}
+{% endschema %}

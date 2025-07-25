@@ -1,0 +1,76 @@
+/* common css  */
+/* fonts import */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+/* fonts import -END */
+
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #04040d;
+  font-family: "Inter", sans-serif; /* Default text font */
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* reset, root */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body.mobile-menu-active {
+  overflow: hidden;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif; /* Title font */
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a,
+button,
+.btn,
+input,
+select,
+textarea,
+.form-control,
+.form-select {
+  &:focus {
+    box-shadow: none !important;
+    outline: none !important;
+  }
+}
+
+
+.pr-30 {
+  padding-right: 0;
+}
+
+@media (min-width: 1000px) {
+  .pr-30 {
+    padding-right: 30px;
+  }
+}

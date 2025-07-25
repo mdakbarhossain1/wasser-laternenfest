@@ -1,0 +1,131 @@
+{% stylesheet %}
+  .ticket-promo-section {
+    padding: 0 0 120px 0;
+    background-color: #04040d;
+    color: white;
+  }
+
+  .ticket-promo-section .promo-content {
+    width: 100%;
+    max-width: 1094px;
+    margin: 0 auto;
+    padding: 0 50px;
+    height: 370px;
+    border-radius: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .ticket-promo-section .promo-content .promo-title {
+    color: #fff;
+    font-family: 'PlayfairDisplay-Bold', serif;
+    font-style: normal;
+    font-size: 50px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .ticket-promo-section .promo-content .divider {
+    width: 220px;
+    height: 0;
+    border-top: 4px dashed #0b0b25;
+    transform: rotate(90deg);
+  }
+
+  .ticket-promo-section .promo-content .ticket-button {
+    background: #fff;
+    border-radius: 30px;
+    padding: 20px;
+    width: 184px;
+    height: 60px;
+    border: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    color: #0b0b25;
+    font-family: 'Inter-SemiBold', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+
+    transition: transform 0.2s ease;
+  }
+
+  .ticket-promo-section .promo-content .ticket-button:hover {
+    transform: scale(1.05);
+  }
+
+  /* Responsive @media (max-width: 992px) */
+  @media (max-width: 992px) {
+    .ticket-promo-section .promo-content {
+      flex-direction: column;
+      justify-content: center;
+      gap: 24px;
+      padding: 40px 24px;
+      text-align: center;
+    }
+
+    .ticket-promo-section .promo-content .divider {
+      transform: rotate(0deg);
+      width: 60%;
+      border-top: 2px dashed #0b0b25;
+    }
+
+    .ticket-promo-section .promo-content .promo-title {
+      font-size: 40px;
+    }
+  }
+
+  /* Responsive @media (max-width: 576px) */
+  @media (max-width: 576px) {
+    .ticket-promo-section {
+      padding: 60px 20px;
+    }
+
+    .ticket-promo-section .promo-content {
+      padding: 30px 20px;
+      height: auto;
+    }
+
+    .ticket-promo-section .promo-content .promo-title {
+      font-size: 32px;
+    }
+
+    .ticket-promo-section .promo-content .ticket-button {
+      width: 100%;
+    }
+  }
+{% endstylesheet %}
+
+<div class="ticket-promo-section">
+  <div class="container">
+    <div class="promo-content" style="background: url({{ 'ticket-bg.png' | asset_url }}) center/cover no-repeat;">
+      <h2 class="promo-title">
+        Reserve Your Tickets<br>
+        For The Events
+      </h2>
+      <div class="divider"></div>
+      <button class="ticket-button">Buy Tickets</button>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ticket Promo",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Ticket Promo"
+    }
+  ]
+}
+{% endschema %}

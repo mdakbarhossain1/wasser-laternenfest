@@ -1,0 +1,154 @@
+{% stylesheet %}
+  .navbar {
+    background: rgba(4, 4, 13, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+  }
+  .navbar .brand-logo {
+    height: 48px;
+  }
+  .mobile-menu-toggle {
+    display: none;
+  }
+
+  @media (max-width: 992px) {
+    .mobile-menu-toggle {
+      display: block;
+    }
+    .nav-links {
+      position: fixed;
+      right: -100%;
+      transition: right 0.3s ease;
+      background: rgba(4, 4, 13, 0.95);
+      width: 80%;
+      height: 100vh;
+      padding: 80px 20px;
+    }
+    .nav-links.active {
+      right: 0;
+    }
+  }
+
+  .nav-link.active {
+    font-weight: 700;
+    color: white;
+  }
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background: rgba(43, 43, 43, 0.9);
+  }
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  .btn-contact {
+    background: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  .btn-tickets {
+    background: linear-gradient(90deg, #f8b133 0%, #e5332a 100%);
+    color: white;
+  }
+{% endstylesheet %}
+
+<nav class="navbar">
+  <div class="container">
+    <!-- Brand/Logo -->
+    <div class="navbar-brand">
+      <a href="{{ routes.root_url }}">
+        {% if section.settings.logo %}
+          <img
+            src="{{ section.settings.logo | image_url: width: 160 }}"
+            alt="Logo"
+            class="brand-logo"
+            width=""
+            height=""
+          >
+        {% else %}
+          <span class="h2">{{ shop.name }}</span>
+        {% endif %}
+      </a>
+    </div>
+
+    <!-- Mobile Toggle -->
+    <button class="mobile-menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+      <span class="toggle-bar"></span>
+      <span class="toggle-bar"></span>
+      <span class="toggle-bar"></span>
+    </button>
+
+    <!-- Nav Links -->
+    <div class="nav-links">
+      <ul class="navbar-nav">
+        {% for link in linklists[section.settings.menu].links %}
+          <li class="nav-item {% if link.links.size > 0 %}dropdown{% endif %}">
+            <a href="{{ link.url }}" class="nav-link{% if link.active %} active{% endif %}">
+              {{ link.title }}
+              {% if link.links.size > 0 %}
+                <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+              {% endif %}
+            </a>
+
+            {% if link.links.size > 0 %}
+              <div class="dropdown-menu">
+                {% for sublink in link.links %}
+                  <a href="{{ sublink.url }}" class="dropdown-item">{{ sublink.title }}</a>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+      <a href="/pages/contact">
+        <button class="btn btn-contact">{{ section.settings.contact_button }}</button>
+      </a>
+      <a href="/pages/tickets">
+        <button class="btn btn-tickets">{{ section.settings.ticket_button }}</button>
+      </a>
+    </div>
+  </div>
+</nav>
+
+{% schema %}
+{
+  "name": "Custom Navbar",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Main menu"
+    },
+    {
+      "type": "text",
+      "id": "contact_button",
+      "default": "Contact Us",
+      "label": "Contact Button Text"
+    },
+    {
+      "type": "text",
+      "id": "ticket_button",
+      "default": "Buy Tickets",
+      "label": "Ticket Button Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Navbar",
+      "category": "Header"
+    }
+  ]
+}
+{% endschema %}

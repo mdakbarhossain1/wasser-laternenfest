@@ -1,0 +1,269 @@
+{% stylesheet %}
+  .testimonials-section {
+    padding: 120px 0;
+    background-color: #04040d;
+    color: white;
+  }
+
+  .testimonials-section .testimonials-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #f4f5f7;
+  }
+
+  @media (min-width: 900px) {
+    .testimonials-section .testimonials-title {
+      font-size: 56px;
+    }
+  }
+
+  .testimonials-section .testimonials-carousel {
+    position: relative;
+    height: 470px;
+    overflow: hidden;
+  }
+
+  .testimonials-section .testimonials-carousel::before,
+  .testimonials-section .testimonials-carousel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    z-index: 2;
+  }
+
+  .testimonials-section .testimonials-carousel::before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(4, 4, 13, 1) 0%, rgba(4, 4, 13, 0) 100%);
+  }
+
+  .testimonials-section .testimonials-carousel::after {
+    right: 0;
+    background: linear-gradient(270deg, rgba(4, 4, 13, 1) 0%, rgba(4, 4, 13, 0) 100%);
+  }
+
+  .testimonials-section .testimonials-track {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .testimonials-section .testimonials-row {
+    display: flex;
+    gap: 32px;
+  }
+
+  .testimonials-section .testimonials-row.second {
+    margin-left: 328px;
+  }
+
+  @media (max-width: 1024px) {
+    .testimonials-section .testimonials-row.second {
+      margin-left: 80px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .testimonials-section .testimonials-row.second {
+      margin-left: 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  .testimonials-section .testimonial-card {
+    width: 306px;
+    padding: 20px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%);
+    border-radius: 16px;
+    border: 1px solid;
+    border-image: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 31.73%,
+        rgba(255, 255, 255, 0.3) 67.31%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      1;
+    backdrop-filter: blur(5px);
+    flex-shrink: 0;
+  }
+
+  .testimonials-section .testimonial-card .rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .testimonials-section .testimonial-card .rating .rating-value {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #e4e6ea;
+  }
+
+  .testimonials-section .testimonial-card .testimonial-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #c9ccd8;
+    margin-bottom: 20px;
+  }
+
+  .testimonials-section .testimonial-card .client-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .testimonials-section .testimonial-card .client-info .client-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .testimonials-section .testimonial-card .client-info .client-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+  }
+{% endstylesheet %}
+
+<div class="testimonials-section">
+  <div class="container">
+    <h2 class="testimonials-title text-center mb-5">Client Testimonials</h2>
+
+    <div class="testimonials-carousel" id="testimonials-carousel-{{ section.id }}" data-section-id="{{ section.id }}">
+      <div class="testimonials-track">
+        <!-- First row of testimonials -->
+        <div class="testimonials-row first-row">
+          <!-- Duplicate cards for seamless looping -->
+          {% for i in (1..10) %}
+            <div class="testimonial-card">
+              <div class="rating">
+                <img src="{{ 'star.png' | asset_url }}" alt="Star" width="16" height="16">
+                <img src="{{ 'star.png' | asset_url }}" alt="Star" width="16" height="16">
+                <img src="{{ 'star.png' | asset_url }}" alt="Star" width="16" height="16">
+                <img src="{{ 'star.png' | asset_url }}" alt="Star" width="16" height="16">
+                <img src="{{ 'star.png' | asset_url }}" alt="Star" width="16" height="16">
+                <span class="rating-value">(4.5)</span>
+              </div>
+              <p class="testimonial-text">
+                Many users appreciate platforms that are easy to navigate, allowing both recruiters and candidates
+              </p>
+              <div class="client-info">
+                <img
+                  src="{{ 'client-profile.png' | asset_url }}"
+                  alt="Client"
+                  class="client-avatar"
+                  width="40"
+                  height="40"
+                >
+                <span class="client-name">Esther Howard</span>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <!-- Second row of testimonials -->
+        <div class="testimonials-row second-row second">
+          {% for i in (1..10) %}
+            <div class="testimonial-card">
+              <div class="rating">
+                <img src="{{ 'star.png' | asset_url }}" alt="Star" width="16" height="16">
+                <img src="{{ 'star.png' | asset_url }}" alt="Star" width="16" height="16">
+                <img src="{{ 'star.png' | asset_url }}" alt="Star" width="16" height="16">
+                <img src="{{ 'star.png' | asset_url }}" alt="Star" width="16" height="16">
+                <img src="{{ 'star.png' | asset_url }}" alt="Star" width="16" height="16">
+                <span class="rating-value">(4.5)</span>
+              </div>
+              <p class="testimonial-text">
+                Many users appreciate platforms that are easy to navigate, allowing both recruiters and candidates
+              </p>
+              <div class="client-info">
+                <img
+                  src="{{ 'client-profile.png' | asset_url }}"
+                  alt="Client"
+                  class="client-avatar"
+                  width="40"
+                  height="40"
+                >
+                <span class="client-name">Esther Howard</span>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% javascript %}
+  // Load GSAP only once
+  if (typeof gsap === 'undefined') {
+    const gsapScript = document.createElement('script');
+    gsapScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js';
+    gsapScript.onload = initTestimonialsAnimation;
+    document.head.appendChild(gsapScript);
+  } else {
+    initTestimonialsAnimation();
+  }
+
+  function initTestimonialsAnimation() {
+    const carousel = document.querySelector('.testimonials-carousel[data-section-id]');
+    const sectionId = carousel?.dataset.sectionId;
+    const firstRow = carousel.querySelector('.first-row');
+    const secondRow = carousel.querySelector('.second-row');
+
+    // Calculate total width of one set of cards
+    const cardWidth = 306; // width + padding
+    const gap = 32;
+    const cardsPerSet = 5;
+    const totalWidth = (cardWidth + gap) * cardsPerSet - gap;
+
+    // Duplicate the cards for seamless looping
+    firstRow.innerHTML = firstRow.innerHTML + firstRow.innerHTML;
+    secondRow.innerHTML = secondRow.innerHTML + secondRow.innerHTML;
+
+    // Set initial positions
+    gsap.set(firstRow, { x: 0 });
+    gsap.set(secondRow, { x: -160 }); // Offset for second row
+
+    // Create animations
+    const animation = gsap.timeline({ repeat: -1 });
+    animation.to(
+      firstRow,
+      {
+        x: -totalWidth,
+        duration: 20,
+        ease: 'none',
+      },
+      0
+    );
+    animation.to(
+      secondRow,
+      {
+        x: -totalWidth - 160, // Maintain offset during animation
+        duration: 20,
+        ease: 'none',
+      },
+      0
+    );
+  }
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Client Testimonials",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Client Testimonials"
+    }
+  ]
+}
+{% endschema %}
