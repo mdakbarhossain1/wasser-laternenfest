@@ -1,0 +1,306 @@
+{% stylesheet %}
+
+.mb-56 {
+  margin-bottom: 56px;
+}
+
+.pb-8{
+    padding-bottom: 8px;
+}
+
+.pb-24 {
+  padding-bottom: 12px;
+}
+
+@media (min-width: 900px) {
+  .pb-24 {
+    padding-bottom: 24px;
+  }
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.sponsor-request-to-join-us {
+  padding: 60px 0;
+}
+
+@media (min-width: 900px) {
+  .sponsor-request-to-join-us {
+    padding: 120px 0;
+  }
+}
+
+.sponsor-request-form-gradient-bg {
+  padding: 24px;
+  border-radius: 32px;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 165, 0, 0.12) 0%,
+    rgba(255, 165, 0, 0.02) 100%
+  );
+}
+
+.sponsor-request-form-gradient-bg .input-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+@media (min-width: 700px) {
+  .sponsor-request-form-gradient-bg .input-section {
+    flex-direction: row;
+    gap: 32px;
+  }
+}
+
+.select-menu-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input-field,
+.input-field-phone {
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  padding: 12px;
+  color: #a3a7bd;
+  font-size: 16px;
+  width: 100%;
+  border: 1px solid transparent;
+}
+
+.input-field-phone {
+  padding-left: 60px;
+}
+
+.input-text-area-field {
+  flex: 1;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  padding: 12px;
+  color: #a3a7bd;
+  font-size: 16px;
+  width: 100%;
+  min-height: 112px;
+  resize: vertical;
+}
+
+.input-field:focus {
+  outline: none;
+  border: 1px solid #f8b133;
+}
+
+.select-menu {
+  position: absolute;
+  right: 0;
+  left: 10px;
+}
+
+.dropdown-trigger {
+  list-style: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.select-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.country-code-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 8px 0;
+  margin-top: 8px;
+  width: 150px;
+  list-style: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+}
+
+.country-code-menu li {
+  padding: 10px 16px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.country-code-menu li:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dropdown-icon {
+  transition: transform 0.3s ease;
+}
+
+.select-menu[open] .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+/* Autofill Fix */
+.input-field:-webkit-autofill,
+.input-field:-webkit-autofill:focus,
+.input-field:-webkit-autofill:hover,
+.input-field:-webkit-autofill:active {
+  box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.05) inset !important;
+  -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.05) inset !important;
+  -webkit-text-fill-color: #a3a7bd !important;
+  transition: background-color 9999s ease-in-out 0s !important;
+  border-radius: 100px;
+}
+
+/* Hide number input spinner (Chrome, Safari, Edge) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide spinner (Firefox) */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.sponsor-btn-gradient {
+  background: linear-gradient(90deg, #f8b133 0%, #e5332a 99.61%);
+  border: none;
+  border-radius: 30px;
+  padding: 20px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  width: 100%;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.sponsor-btn-gradient:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(229, 51, 42, 0.4);
+}
+
+@media (max-width: 700px) {
+  .sponsor-btn-gradient {
+    width: 100%;
+  }
+}
+
+{% endstylesheet %}
+
+<section class="sponsor-request-to-join-us">
+  <div class="container">
+    <h2 class="text-center text-white font-56 fw-bold mb-56">Request to join us</h2>
+    <div>
+      <form class="d-flex flex-column justify-content-between w-100 h-100">
+        <div class="sponsor-request-form-gradient-bg mb-20">
+          <!-- name -->
+
+          <div class="input-section pb-24">
+            <div class="w-100">
+              <label for="html" class="pb-8 text-white font-18 fw-normal">Your Name </label>
+              <input type="text" placeholder="First Name" class="input-field">
+            </div>
+
+            <div class="w-100">
+              <label for="html" class="pb-8 text-white font-18 fw-normal"> Company * </label>
+              <input type="text" placeholder="Last Name" class="input-field">
+            </div>
+          </div>
+          <div class="input-section pb-24">
+            <div class="w-100">
+              <label for="html" class="pb-8 text-white font-18 fw-normal"> Phone * </label>
+              <div class="select-menu-wrapper">
+                <div class="select-menu d-flex gap-1 align-items-center">
+                  <img width="" height="" 
+                    src="{{ 'bangladesh-icon.svg' | asset_url }}"
+                    alt="bangladesh-icon"
+                  >
+                  <img width="" height="" 
+                    src="{{ 'dropdown-menu.svg' | asset_url }}"
+                    alt="dropdown-menu"
+                  >
+                </div>
+                <input
+                  type="number"
+                  placeholder="Phone"
+                  class="input-field-phone"
+                >
+              </div>
+            </div>
+
+            <div class="w-100">
+              <label for="html" class="pb-8 text-white font-18 fw-normal"> Email * </label>
+              <input type="email" placeholder="Email" class="input-field">
+            </div>
+          </div>
+          <!-- address -->
+          <div class="input-section pb-24">
+            <div class="w-100">
+              <label for="html" class="pb-8 text-white font-18 fw-normal"> Your Location* </label>
+              <input type="text" placeholder="City" class="input-field">
+            </div>
+
+            <div class="w-100">
+              <label for="html" class="pb-8 text-white font-18 fw-normal"> Products you sell </label>
+              <input
+                type="text"
+                placeholder="Products you sell"
+                class="input-field"
+              >
+            </div>
+          </div>
+          <!-- address -->
+          <div class="input">
+            <label for="html" class="pb-8 text-color-bd font-18 fw-normal"> Message </label>
+            <div class="input-section">
+              <textarea
+                type="text"
+                placeholder="write messege"
+                class="input-text-area-field"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="mb-40">
+          <p class="font-16 text-color-bd pb-32 d-flex gap-2">
+            <input type="checkbox" class="form-check-input" id="Check1">
+            <label for="Check1">
+              I Consent to Receive SMS Notifications, Alerts & Occasional marketing and promotional SMS messages from
+              Water Lantern Festival. Message frequency varies. Message & data rates may apply.
+            </label>
+          </p>
+          <p class="font-16 text-white text-center">Privacy Policy | Terms of Service</p>
+        </div>
+        <div>
+          <button class="btn sponsor-btn-gradient">Send Request</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sponsor Request To Join",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Sponsor Request To Join"
+    }
+  ]
+}
+{% endschema %}

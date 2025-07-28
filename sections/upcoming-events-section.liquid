@@ -337,8 +337,9 @@
 
 <div class="upcoming-events-container">
   <div class="container">
+    {% if section.settings.show_gradient_blob %}
     <div class="gradient-blob blob-1"></div>
-    <!-- <div class="gradient-blob blob-3"></div> -->
+  {% endif %}
     <div class="row">
       <div class="col-12 text-center">
         <h1 class="upcoming-events-title">Upcoming Events</h1>
@@ -529,7 +530,14 @@
 {% schema %}
 {
   "name": "Upcoming Events Section",
-  "settings": [],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_gradient_blob",
+      "label": "Show Gradient Blob Background",
+      "default": true
+    }
+  ],
   "presets": [
     {
       "name": "Upcoming Events Section",

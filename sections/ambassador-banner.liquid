@@ -1,0 +1,71 @@
+{% stylesheet %}
+    .enviromental-banner-img {
+    position: relative;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  @media (min-width: 1000px) {
+    .enviromental-banner-img {
+      min-height: 700px;
+    }
+  }
+
+  .common-card-section {
+    padding: 60px 0px;
+  }
+
+  @media (min-width: 1200px) {
+    .common-card-section {
+      padding: 120px 0px;
+    }
+  }
+{% endstylesheet %}
+
+<section
+  class="enviromental-banner-img"
+  style="
+        background: linear-gradient(
+      189.16deg,
+      rgba(4, 4, 13, 0) 0%,
+      rgb(4, 4, 13) 100%
+    ),
+    url('{{ 'ambassador-banner.png' | asset_url }}') center/cover no-repeat;
+  "
+>
+  <div class="container hero-content">
+    <div class="row align-items-center">
+      <div class="col-xl-7 col-12">
+        <h1 class="hero-title text-capitalize font-80">
+          Ambassador <br class="d-lg-block d-none">
+          program
+        </h1>
+      </div>
+      <div class="col-xl-4 col-12">
+        <div class="event-card">
+          <p
+            class="font-18 text-white mb-24"
+            style="font-family: Inter, sans-serif; line-height: 150%"
+          >
+            Get $2 back for every person your refer
+          </p>
+          <button class="btn btn-gradient">Buy Tickets</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ambassador Banner",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Ambassador Banner"
+    }
+  ]
+}
+{% endschema %}

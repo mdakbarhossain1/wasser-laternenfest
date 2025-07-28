@@ -1,0 +1,228 @@
+{% stylesheet %}
+    .media-downloads {
+    padding: 60px 20px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 900px) {
+    .media-downloads {
+      padding: 120px 0px;
+    }
+  }
+
+  .main-media-image {
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 60px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .main-media-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @media (min-width: 1100px) {
+    .main-media-image img {
+      height: 847px;
+    }
+  }
+
+  .arrow-controls {
+    position: absolute;
+    top: 40%;
+    left: -13%;
+    right: -13%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+
+  @media (min-width: 900px) {
+    .arrow-controls {
+      left: -3%;
+      right: -3%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .arrow-controls {
+      left: -5%;
+      right: -5%;
+      top: calc(100% - 60px);
+      justify-content: center;
+      gap: 20px;
+      transform: none;
+    }
+  }
+
+  .arrow-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+  }
+
+  @media (min-width: 900px) {
+    .arrow-btn {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  .arrow-btn img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .arrow-border-btn {
+    background: transparent;
+    border: 1px solid #f97316;
+  }
+
+  .arrow-btn-gradient {
+    background: linear-gradient(180deg, #f97316 0%, #ef4444 100%);
+    color: #fff;
+  }
+
+  .arrow-btn-gradient:hover {
+    background: linear-gradient(180deg, #ef4444 0%, #f97316 100%);
+  }
+
+  .thumbnail-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  @media (min-width: 900px) {
+    .thumbnail-grid {
+      gap: 32px;
+    }
+  }
+
+  .thumbnail-item {
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .thumbnail-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .thumbnail-item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  @media (min-width: 1100px) {
+    .thumbnail-item img {
+      width: 100%;
+      height: 250px !important;
+    }
+  }
+
+  @media (min-width: 700px) {
+    .thumbnail-item img {
+      border-radius: 24px;
+    }
+  }
+{% endstylesheet %}
+
+<section class="media-downloads">
+  <div class="container">
+    <h2 class="common-font-title text-center mb-56">Media Downloads</h2>
+
+    <div class="media-display-container position-relative">
+      <!-- Main Image -->
+      <div class="main-media-image">
+        <img
+          width=""
+          height=""
+          src="{{ 'new-media-main-1.png' | asset_url }}"
+          alt="Featured Media"
+          class="img-fluid w-100"
+        >
+      </div>
+
+      <!-- Fixed Arrow Buttons -->
+      <div class="arrow-controls">
+        <button class="arrow-btn arrow-border-btn">
+          <img width="" height="" src="{{ 'arrow-left.svg' | asset_url }}" alt="Previous">
+        </button>
+        <button class="arrow-btn arrow-btn-gradient">
+          <img width="" height="" src="{{ 'arrow-right.svg' | asset_url }}" alt="Next">
+        </button>
+      </div>
+
+      <!-- Thumbnail Grid -->
+      <div class="thumbnail-grid">
+        <div class="thumbnail-item">
+          <img
+            width=""
+            height=""
+            src="{{ 'media-downloads-slider-2.jpg' | asset_url }}"
+            alt="Thumbnail 1"
+            class="w-100 img-fluid"
+          >
+        </div>
+        <div class="thumbnail-item">
+          <img
+            width=""
+            height=""
+            src="{{ 'media-downloads-slider-3.jpg' | asset_url }}"
+            alt="Thumbnail 2"
+            class="w-100 img-fluid"
+          >
+        </div>
+        <div class="thumbnail-item">
+          <img
+            width=""
+            height=""
+            src="{{ 'media-downloads-slider-4.jpg' | asset_url }}"
+            alt="Thumbnail 3"
+          >
+        </div>
+        <div class="thumbnail-item">
+          <img
+            width=""
+            height=""
+            src="{{ 'media-downloads-slider-5.jpg' | asset_url }}"
+            alt="Thumbnail 4"
+            class="w-100 img-fluid"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% javascript %}
+  // write js for media slider 
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Media Download",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Media Download"
+    }
+  ]
+}
+{% endschema %}

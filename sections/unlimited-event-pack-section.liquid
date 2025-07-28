@@ -1,0 +1,122 @@
+{% stylesheet %}
+    .mb-80 {
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: 900px) {
+    .mb-80 {
+      margin-bottom: 60px;
+    }
+  }
+
+    .card-section {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 24px;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0);
+      background: linear-gradient(180deg, rgba(255, 165, 0, 0.12) 0%, rgba(255, 165, 0, 0.02) 100%);
+      position: relative;
+    }
+
+    .card-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 12px;
+      pointer-events: none;
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+
+    @media (min-width: 1000px) {
+      .card-section {
+        flex-direction: row;
+      }
+    }
+
+    .card-section .event-card-icon {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .card-section .event-card-icon .dollar {
+      width: 29px;
+    }
+{% endstylesheet %}
+}
+
+<section class="event-page-unlimited-event-pack-section">
+  <div class="container">
+    <div class="mb-80">
+      <div class="card-section g-0">
+        <div>
+          <!-- <h2 class="text-white font-28 fw-medium">ULTIMATE EVENTS PACKAGE</h2> -->
+          <h2 class="text-white font-28 fw-medium">TICKETS NEARLY SOLD OUT</h2>
+        </div>
+        <div class="row w-100 g-0 justify-content-center">
+          <div class="event-card-icon col-xl-4 col-md-4 col-12 pb-2 pb-md-0">
+            <img src="{{ 'doller.svg' | asset_url }}" alt="doller" width="" height="">
+            <p class="font-20 text-color-bd">Worth <span class="fw-semibold text-color-eb">$315</span></p>
+          </div>
+          <div class="event-card-icon col-xl-4 col-md-4 col-12 pb-2 pb-md-0">
+            <img src="{{ 'ticket.svg' | asset_url }}" alt="ticket" class="dollar" width="" height="">
+            <p class="font-20 text-color-bd">tickets start from just €10</p>
+          </div>
+          <div class="event-card-icon align-items-start col-xl-4 col-md-4 col-12">
+            <img src="{{ 'doller.svg' | asset_url }}" alt="doller" width="" height="">
+            <!--
+              <p class="font-18 text-color-bd">
+                Secure your package
+                <br class="d-none d-lg-none d-xl-flex" />
+                today for ONLY $30PP
+              </p>
+            -->
+            <p class="font-18 text-color-bd">Secure your ticket now - limited availability</p>
+          </div>
+
+          <!--
+            <div class="event-card-icon col-xl-3 col-6">
+              <img
+                src="{{ 'event-page-banner-calender.svg' | asset_url }}"
+                alt="calendar"
+              />
+              <p class="font-18 text-color-bd">
+                Available:
+                <span class="fw-semibold text-color-eb"> May-Sept</span>
+              </p>
+            </div>
+          -->
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-white font-56 fw-semibold pb-24">Lantern Event Package 2025</h3>
+      <p class="font-18 text-color-bd pb-24">
+        Step into a magical evening under the stars with our Lantern Event Package 2025. Whether you're celebrating
+        love, life, or togetherness, this enchanting experience is designed to bring people closer through the gentle
+        glow of lanterns lighting up the night sky.
+      </p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "TICKETS NEARLY SOLD OUT",
+  "settings": [],
+  "presets": [
+    {
+      "name": "TICKETS NEARLY SOLD OUT"
+    }
+  ]
+}
+{% endschema %}

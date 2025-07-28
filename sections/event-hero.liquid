@@ -1,0 +1,229 @@
+{% stylesheet %}
+      .event-page-banner-img {
+      position: relative;
+      min-height: 700px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .event-page-banner-img-content {
+      margin-top: auto;
+      padding: 0 40px 100px 40px;
+      z-index: 2;
+    }
+
+    .event-page-banner-img-title {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 80px;
+      line-height: 120%;
+      margin-bottom: 40px;
+      color: #fff;
+    }
+
+    @media (max-width: 992px) {
+      .event-page-banner-img-content {
+        margin-top: 55px;
+      }
+
+      .event-page-banner-img-title {
+        font-size: 56px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .event-page-banner-img {
+        min-height: 600px;
+      }
+
+      .event-page-banner-img-title {
+        font-size: 42px;
+        margin-bottom: 32px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .event-page-banner-img-title {
+        font-size: 32px;
+        margin-bottom: 24px;
+      }
+    }
+
+    @media (max-height: 700px) {
+      .event-page-banner-img {
+        min-height: 700px;
+      }
+
+      .event-page-banner-img-content {
+        padding-bottom: 60px;
+      }
+    }
+
+    .event-btn-gradient {
+      background: linear-gradient(90deg, #f8b133 0%, #e5332a 100%);
+      border: none;
+      border-radius: 100px;
+      padding: 20px 30px;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 100%;
+      color: #fff;
+      transition: all 0.3s ease;
+      width: fit-content;
+      font-family: 'Inter', sans-serif;
+      box-sizing: border-box;
+    }
+
+    .event-btn-gradient:hover {
+      box-shadow: 0 4px 15px rgba(229, 51, 42, 0.4);
+    }
+
+    @media (max-width: 500px) {
+      .event-btn-gradient {
+        width: 100%;
+      }
+    }
+
+    .event-btn-gradient2 {
+      position: relative;
+      background: transparent;
+      color: white;
+          background: linear-gradient(90deg, #f8b133 0%, #e5332a 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    .event-btn-gradient2:hover{
+      color: white;
+    }
+
+    .event-btn-gradient2::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 30px;
+      padding: 1px;
+          background: linear-gradient(90deg, #f8b133 0%, #e5332a 100%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box,
+                     linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      z-index: -1;
+    }
+
+    @media (max-width: 500px) {
+      .event-btn-gradient2 {
+        width: 100%;
+      }
+    }
+
+    .event-gradient-mini {
+         background: linear-gradient(90deg, #f8b133 0%, #e5332a 100%);
+      padding: 14px;
+      border-radius: 99px;
+      width: fit-content;
+      height: fit-content;
+    }
+
+    .gap-12 {
+      gap: 12px;
+  }
+{% endstylesheet %}
+
+<section
+  class="event-page-banner"
+  style="
+        background: linear-gradient(
+       189.16deg,
+       rgba(4, 4, 13, 0) 0%,
+       rgb(4, 4, 13) 100%
+     ),
+    url('{{ 'hero-section-background.jpg' | asset_url }}') center/cover no-repeat;
+  "
+>
+  <div class="event-page-banner-img h-25">
+    <div class="container hero-content">
+      <div class="d-flex justify-content-center">
+        <button class="btn event-btn-gradient2">California</button>
+      </div>
+      <h1 class="hero-title text-capitalize font-80 text-center mb-56">
+        A Night You'll <br class="d-none d-xl-inline-block">
+        Remember Forever
+      </h1>
+
+      <div class="d-flex justify-content-center mb-56">
+        <button class="btn event-btn-gradient">BUY TICKETS NOW</button>
+      </div>
+
+      <div class="row justify-content-between">
+        <div class="col-xl-4 col-12 pb-32 pb-lg-0">
+          <div class="d-flex gap-12">
+            <div class="event-gradient-mini">
+              <img
+                src="{{ 'event-page-banner-notebook.svg' | asset_url }}"
+                alt="event-page-banner-notebook"
+                width=""
+                height=""
+              >
+            </div>
+            <div>
+              <h4 class="fw-semibold font-40 text-white pb-24">City</h4>
+              <p class="text-color-bd font-18 pb-16">California</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-12 pb-32 pb-lg-0">
+          <div class="d-flex gap-12">
+            <div class="event-gradient-mini">
+              <img
+                src="{{ 'event-page-banner-calender.svg' | asset_url }}"
+                alt="event-page-banner-calender"
+                height=""
+                width=""
+              >
+            </div>
+            <div>
+              <h4 class="fw-semibold font-40 text-white pb-24">Dates</h4>
+              <p class="text-color-bd font-18 pb-16">Friday, July 18, 2025</p>
+              <p class="text-color-bd font-18 pb-16">Saturday, July 19, 2025</p>
+              <p class="text-color-bd font-18">Sunday, July 20, 2025</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-12">
+          <div class="d-flex gap-12">
+            <div class="event-gradient-mini">
+              <img
+                src="{{ 'event-page-banner-location.svg' | asset_url }}"
+                alt="event-page-banner-location"
+                height=""
+                width=""
+              >
+            </div>
+            <div>
+              <h4 class="fw-semibold font-40 text-white pb-24">Location</h4>
+              <p class="text-color-bd font-18 pb-16">Almaden Lake Park</p>
+              <p class="text-color-bd font-18 pb-16">*No on-site parking*</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Event Hero",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Event Hero"
+    }
+  ]
+}
+{% endschema %}

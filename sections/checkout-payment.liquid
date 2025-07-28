@@ -1,0 +1,355 @@
+{% stylesheet %}
+        /* Checkout Banner */
+        .checkout-banner {
+          position: relative;
+          height: auto;
+          background: linear-gradient(189.16deg, rgba(4, 4, 13, 0) 0%, #04040d 100%),
+            url("../img/event-page-hero-img.png") center/cover no-repeat;
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+        }
+
+        .text-color-orange-400 {
+          color: #fe5331;
+          font-family: "Inter", sans-serif;
+      }
+
+      .text-color-orange-300 {
+        color: #ffa500;
+      }
+
+      /* Font size utility with responsive behavior */
+    .font-24 {
+      font-size: 18px;
+    }
+
+    /* Font family utility */
+    .font-inter {
+      font-family: "Inter", sans-serif;
+      font-display: swap; /* Better font loading behavior */
+    }
+
+    /* Responsive font size adjustment */
+    @media (min-width: 600px) {
+      .font-24 {
+        font-size: 24px;
+      }
+    }
+
+        .checkout-banner-content {
+          margin-top: auto;
+          z-index: 2;
+          padding: 0 40px;
+        }
+
+        .checkout-banner-title {
+          font-family: "Playfair Display", serif;
+          font-weight: 700;
+          font-size: 80px;
+          line-height: 120%;
+          margin-bottom: 30px;
+          color: #ffffff;
+        }
+
+        /* Checkout Payment Section */
+        .checkout-payment {
+          padding: 60px 0;
+        }
+
+        .payment-card {
+          border-radius: 32px;
+          margin-bottom: 32px;
+          padding: 32px;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          background: linear-gradient(
+            180deg,
+            rgba(255, 165, 0, 0.12) 0%,
+            rgba(255, 165, 0, 0.02) 100%
+          );
+        }
+
+        .event-card {
+          position: relative;
+          border-radius: 24px;
+          padding: 16px;
+          background: rgba(255, 255, 255, 0.1);
+          overflow: hidden;
+        }
+
+        .event-card::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border-radius: 24px;
+          padding: 1px;
+          background: linear-gradient(
+            145deg,
+            rgba(255, 162, 0, 0.203) 50%,
+            rgba(255, 166, 0, 0) 100%
+          );
+          -webkit-mask: linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+          -webkit-mask-composite: xor;
+          mask-composite: exclude;
+          pointer-events: none;
+        }
+
+        .secure-btn {
+          border-radius: 30px;
+          display: flex;
+          width: 201px;
+          height: 48px;
+          padding: 18px;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          background: #363743;
+          border: none;
+          color: #fff;
+          font-family: "Inter", sans-serif;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 100%;
+        }
+
+        .payment-method {
+          display: flex;
+          flex-direction: column;
+          gap: 32px;
+        }
+
+        .payment-btn {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          width: 100%;
+          padding: 16px 20px;
+          border-radius: 100px;
+          background-color: #363743;
+          color: #fff;
+          font-weight: 500;
+          font-size: 16px;
+          cursor: pointer;
+          border: 2px solid transparent;
+          transition: all 0.3s ease;
+        }
+
+        .payment-btn input[type="radio"] {
+          appearance: none;
+          -webkit-appearance: none;
+          width: 20px;
+          height: 20px;
+          border: 2px solid #aaa;
+          border-radius: 50%;
+          background: transparent;
+          position: relative;
+          cursor: pointer;
+          flex-shrink: 0;
+        }
+
+        .payment-btn input[type="radio"]:checked {
+          border: 2px solid transparent;
+          background-image: linear-gradient(#363743, #363743),
+            linear-gradient(90deg, #f8b133 0%, #e5332a 100%);
+          background-origin: border-box;
+          background-clip: padding-box, border-box;
+        }
+
+        .radio-content {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          flex-grow: 1;
+          border-radius: 100px;
+          width: 100%;
+        }
+
+        .credit-card {
+          border-top: 1px solid rgba(255, 165, 0, 0.12);
+          padding-top: 16px;
+        }
+
+        .credit-card-option {
+          display: flex;
+          flex-direction: column;
+          gap: 32px;
+        }
+
+    .credit-card-option .payment-card-btn {
+          display: flex
+  ;
+      align-items: center;
+      justify-content: start;
+      gap: 16px;
+      width: 100%;
+      color: #fff;
+      font-weight: 500;
+      font-size: 16px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+  .payment-card-btn h4{
+    margin: 0;
+  }
+
+        /* Responsive Styles */
+        @media (min-width: 900px) {
+          .checkout-payment {
+            padding: 120px 0;
+          }
+        }
+
+        @media (min-width: 1200px) {
+          .checkout-banner {
+            height: auto;
+            min-height: 400px;
+          }
+        }
+
+        @media (max-width: 992px) {
+          .checkout-banner-content {
+            margin-top: 55px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .checkout-banner-title {
+            font-size: 40px;
+            margin-bottom: 0;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .checkout-banner-title {
+            font-size: 32px;
+            margin-bottom: 0;
+          }
+        }
+
+        @media (min-width: 450px) {
+          .credit-card-option {
+            flex-direction: row;
+          }
+        }
+
+        @media (min-width: 550px) {
+          .payment-method {
+            flex-direction: row;
+          }
+        }
+{% endstylesheet %}
+
+<section class="checkout-payment">
+  <div class="container">
+    <div class="payment-card">
+      <div class="row g-0">
+        <div class="col-lg-5 col-12 pr-30 pb-32 pb-lg-0">
+          <div class="event-card">
+            <div class="d-flex gap-2 pb-16">
+              <img width="" height="" src="{{ 'calendar-03.svg' | asset_url }}" alt="calendar-03">
+              <h4 class="m-0 font-24 fw-medium text-white font-inter">Event Summery</h4>
+            </div>
+            <div class="d-flex justify-content-between gap-2 text-white pb-16">
+              <h2 class="font-24 fw-bold font-inter">Lantern Unlimited Event Package</h2>
+              <span class="font-18 fw-normal"> 2 Person</span>
+            </div>
+            <div class="d-flex justify-content-between text-white border-bottom pb-16 mb-16">
+              <h2 class="font-18 fw-normal font-inter">24/07/2025</h2>
+              <span class="font-18 fw-normal text-color-secondary-gradient"> $30.99 </span>
+            </div>
+            <div>
+              <a href="#" class="font-18 fw-medium text-color-orange-400 pb-40"> Remove </a>
+              <div class="d-flex justify-content-between text-white pb-16">
+                <h3 class="font-24 fw-bold text-white">Pay Today</h3>
+                <p class="font-18 fw-normal text-white">$30.99</p>
+              </div>
+              <div>
+                <button class="secure-btn">
+                  <img width="" height="" src="{{ 'secure-lock-icon.svg' | asset_url }}" alt="">
+                  Secure Booking
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7 col-12">
+          <h4 class="text-white font-24 fw-bold font-inter pb-16">Payment</h4>
+          <div class="d-flex align-items-center gap-2 pb-24">
+            <p class="font-18 fw-normal text-white">Have a discount code</p>
+            <img width="" height="" src="{{ 'dropdown-menu.svg' | asset_url }}" alt="dropdown-menu">
+          </div>
+          <div class="payment-card">
+            <h6 class="text-color-orange-300 font-24 fw-medium font-inter pb-32">Next steps</h6>
+            <ol class="text-color-bd font-24 fw-medium pb-32 m-0">
+              <li class="pb-16">Check that the details above are correct</li>
+              <li class="pb-16">Select your payment method below and confirm your booking</li>
+              <li>You’ll then receive a confirmation email with info on how to collect your tickets</li>
+            </ol>
+            <p class="font-18 text-color-bd fw-medium font-inter">
+              *You’re also confirming that on the date of travel, you and all members of your group will be 18+ if going
+              to: Albufeira, Ayia Napa, Ibiza, Magaluf, Tenerife. If you're travelling to Malia, Kavos, Malta or Zante,
+              the lead booker must be 18, but others in the group can be 17 if they have a parental consent form.
+            </p>
+          </div>
+
+          <div>
+            <div class="payment-method mb-24">
+              <label class="payment-btn">
+                <input type="radio" name="payment" value="apple">
+                <div class="radio-content">
+                  <img width="" height="" src="{{ 'apple-icon.svg' | asset_url }}" alt="apple-icon">
+                  <span>Apple pay</span>
+                </div>
+              </label>
+
+              <label class="payment-btn">
+                <input type="radio" name="payment" value="google" checked>
+                <div class="radio-content">
+                  <img width="" height="" src="{{ 'google-icon.svg' | asset_url }}" alt="google-icon">
+                  <span>G Pay</span>
+                </div>
+              </label>
+            </div>
+
+            <div class="credit-card">
+              <p class="text-color-orange-300 fw-bold font-16 font-inter mb-16">Or</p>
+              <div class="credit-card-option">
+                <label class="payment-card-btn font-24">
+                  <input type="radio" name="payment" value="google" class="payment-radio">
+                  <div class="d-flex gap-1 align-items-center">
+                    <img
+                      width=""
+                      height=""
+                      src="{{ 'credit-card-validation.svg' | asset_url }}"
+                      alt="credit-card-validation"
+                    >
+                    <h4 class="font-bold font-16 text-white font-inter">Credit / Debit Card</h4>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+"name": "Checkout Payment",
+"settings": [],
+"presets": [
+{
+"name": "Checkout Payment",
+}
+],
+}
+{% endschema %}

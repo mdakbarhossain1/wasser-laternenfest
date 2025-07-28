@@ -1,0 +1,70 @@
+{% stylesheet %}
+    .event-page-night-to-remember {
+      padding: 60px 0px;
+    }
+    @media (min-width: 900px) {
+      .event-page-night-to-remember {
+        padding: 120px 0px;
+      }
+    }
+
+  .pl-32 {
+    padding-left: 0;
+  }
+
+  .pr-32 {
+    padding-right: 0;
+  }
+
+  @media (min-width: 1100px) {
+    .pl-32 {
+      padding-left: 32px;
+    }
+
+    .pr-32 {
+      padding-right: 32px;
+    }
+  }
+{% endstylesheet %}
+
+<section class="event-page-night-to-remember">
+  <div class="container">
+    <div class="friends-and-family">
+      <div class="row align-items-center">
+        <div class="col-xl-6 col-12 pr-32 d-flex pb-24 pb-xl-0">
+          <div class="w-100">
+            <img
+              src="{{ 'event-page-night-remember-section-img.png' | asset_url }}"
+              alt="event-page-night-remember-section-img"
+              class="w-100 object-fit-cover"
+              width=""
+              height=""
+            >
+          </div>
+        </div>
+
+        <div class="col-xl-6 col-12 pl-32 d-flex">
+          <div>
+            <h2 class="font-56 text-white fw-semibold pb-24">More Than Just an Event – It’s a Night to Remember</h2>
+            <p class="font-18 text-color-bd">
+              Water Lantern Festival is a heartfelt celebration that unites people of all ages for an evening of light,
+              love, and connection. Reflect, write your message on a lantern, and release it into the water as thousands
+              of lights illuminate the night. Enjoy food trucks, live music, vendors, and fun activities in a truly
+              magical atmosphere.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Night To Remember",
+  "settings": [],
+  "presets": [{
+    "name": "Night To Remember"
+  }]
+}
+{% endschema %}

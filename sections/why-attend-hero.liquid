@@ -1,0 +1,66 @@
+{% stylesheet %}
+  .why-attend-banner-img {
+  position: relative;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+@media (min-width: 1000px) {
+  .why-attend-banner-img {
+    min-height: 500px;
+  }
+}
+
+{% endstylesheet %}
+
+
+<section
+  class="why-attend-banner-img h-25"
+  style="
+    background: linear-gradient(
+        189.16deg,
+        rgba(4, 4, 13, 0) 0%,
+        rgb(4, 4, 13) 100%
+      ),
+      url('{{ 'why-attend-hero.png' | asset_url }}') center/cover no-repeat;
+  "
+>
+  <div class="container hero-content">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-lg-7 col-md-6 col-12">
+        <h1 class="hero-title text-capitalize font-80 why-attend">
+          Why Attend?
+        </h1>
+      </div>
+      <div class="col-xl-4 col-12">
+        <div class="event-card">
+          <p
+            class="font-18 text-white"
+            style="font-family: Inter, sans-serif; line-height: 150%"
+          >
+            Experience an unforgettable night of light, connection, and meaning.
+            The Water Lantern Festival is more than just an event — it’s a
+            celebration of hope, love, and new beginnings.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+{% schema %}
+{
+  "name": "Why Attend Hero",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Why Attend Hero"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,263 @@
+{% stylesheet %}
+    .festival-to-remember {
+    padding: 60px 0;
+  }
+
+  .events-card-section {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 32px;
+  }
+
+  .single-event-card {
+    border-radius: 32px;
+    background: #16100c;
+    padding: 32px;
+  }
+
+  @media (min-width: 900px) {
+    .festival-to-remember {
+      padding: 120px 0;
+    }
+
+    .events-card-section {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .events-card-section {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .events-card-section {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+{% endstylesheet %}
+
+<section class="festival-to-remember">
+  <div class="container">
+    <div>
+      <h2 class="text-center font-56 fw-semibold text-white pb-56">
+        What Awaits You – A <br>
+        Festival to Remember
+      </h2>
+
+      <div class="events-card-section">
+        <div class="single-event-card">
+          <div class="d-flex flex-column justify-content-between w-100 h-100">
+            <div>
+              <div class="d-flex flex-column justify-content-between w-100 h-100">
+                <h3 class="font-40 fw-bold text-white pb-40">
+                  Event <br>
+                  Schedule
+                </h3>
+                <div>
+                  <div class="pb-16">
+                    <div class="d-flex gap-2 pb-12">
+                      <img
+                        width=""
+                        height=""
+                        src="{{ 'tick-circle.svg' | asset_url }}"
+                        alt="tick-circle"
+                      >
+                      <p class="text-color-bd font-18 fw-medium">5:30</p>
+                    </div>
+                    <p class="text-color-bd font-18 fw-medium">Gates Open</p>
+                  </div>
+                  <div class="pb-16">
+                    <div class="d-flex gap-2 pb-12">
+                      <img
+                        width=""
+                        height=""
+                        src="{{ 'tick-circle.svg' | asset_url }}"
+                        alt="tick-circle"
+                      >
+                      <p class="text-color-bd font-18 fw-medium">5:30 - 10:00</p>
+                    </div>
+                    <p class="text-color-bd font-18 fw-medium">Enjoy Food Trucks / Music / Fun</p>
+                  </div>
+                  <div class="pb-16">
+                    <div class="d-flex gap-2 pb-12">
+                      <img
+                        width=""
+                        height=""
+                        src="{{ 'tick-circle.svg' | asset_url }}"
+                        alt="tick-circle"
+                      >
+                      <p class="text-color-bd font-18 fw-medium">10:00</p>
+                    </div>
+                    <p class="text-color-bd font-18 fw-medium">Design your Lantern</p>
+                  </div>
+                  <div class="pb-16">
+                    <div class="d-flex gap-2 pb-12">
+                      <img
+                        width=""
+                        height=""
+                        src="{{ 'tick-circle.svg' | asset_url }}"
+                        alt="tick-circle"
+                      >
+                      <p class="text-color-bd font-18 fw-medium">8:30 - 10:00</p>
+                    </div>
+                    <p class="text-color-bd font-18 fw-medium">Lantern Launch</p>
+                  </div>
+                  <div class="pb-16">
+                    <div class="d-flex gap-2 pb-12">
+                      <img
+                        width=""
+                        height=""
+                        src="{{ 'tick-circle.svg' | asset_url }}"
+                        alt="tick-circle"
+                      >
+                      <p class="text-color-bd font-18 fw-medium">10:00</p>
+                    </div>
+                    <p class="text-color-bd font-18 fw-medium">Event Ends</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="single-event-card">
+          <div class="d-flex flex-column justify-content-between w-100 h-100">
+            <div>
+              <div class="d-flex flex-column justify-content-between w-100 h-100">
+                <h3 class="font-40 fw-bold text-white pb-40">Event Information</h3>
+                <div>
+                  <p class="text-color-bd font-18 fw-medium">
+                    Water Lantern Festival is a joyful celebration filled with fun, hope, and <br>
+                    unforgettable memories. It’s a family-friendly event <br>
+                    where friends, families, neighbors, and even strangers come together to share a peaceful and
+                    meaningful experience under the night sky.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="single-event-card">
+          <div class="d-flex flex-column justify-content-between w-100 h-100">
+            <div>
+              <div class="d-flex flex-column justify-content-between w-100 h-100">
+                <h3 class="font-40 fw-bold text-white pb-40">
+                  What to <br>
+                  Bring
+                </h3>
+                <div>
+                  <div class="d-flex gap-2 pb-12">
+                    <img
+                      width=""
+                      height=""
+                      src="{{ 'tick-circle.svg' | asset_url }}"
+                      alt="tick-circle"
+                    >
+                    <p class="text-color-bd font-18 fw-medium">Event Ticket</p>
+                  </div>
+                  <div class="d-flex gap-2 pb-12">
+                    <img
+                      width=""
+                      height=""
+                      src="{{ 'tick-circle.svg' | asset_url }}"
+                      alt="tick-circle"
+                    >
+                    <p class="text-color-bd font-18 fw-medium">Blanket/Warm Clothes</p>
+                  </div>
+                  <div class="d-flex gap-2 pb-12">
+                    <img
+                      width=""
+                      height=""
+                      src="{{ 'tick-circle.svg' | asset_url }}"
+                      alt="tick-circle"
+                    >
+                    <p class="text-color-bd font-18 fw-medium">Camping Chair</p>
+                  </div>
+                  <div class="d-flex gap-2 pb-12">
+                    <img
+                      width=""
+                      height=""
+                      src="{{ 'tick-circle.svg' | asset_url }}"
+                      alt="tick-circle"
+                    >
+                    <p class="text-color-bd font-18 fw-medium">Camera</p>
+                  </div>
+                  <div class="d-flex gap-2 pb-12">
+                    <img
+                      width=""
+                      height=""
+                      src="{{ 'tick-circle.svg' | asset_url }}"
+                      alt="tick-circle"
+                    >
+                    <p class="text-color-bd font-18 fw-medium">Bug Spray</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="single-event-card">
+          <div class="d-flex flex-column justify-content-between w-100 h-100">
+            <div>
+              <div class="d-flex flex-column justify-content-between w-100 h-100">
+                <h3 class="font-40 fw-bold text-white pb-40">Decorating Your Lantern</h3>
+                <div>
+                  <div class="d-flex gap-2 pb-12">
+                    <img
+                      width=""
+                      height=""
+                      src="{{ 'tick-circle.svg' | asset_url }}"
+                      alt="tick-circle"
+                    >
+                    <p class="text-color-bd font-18 fw-medium">Decorate your lantern with a message</p>
+                  </div>
+                  <div class="d-flex gap-2 pb-12">
+                    <img
+                      width=""
+                      height=""
+                      src="{{ 'tick-circle.svg' | asset_url }}"
+                      alt="tick-circle"
+                    >
+                    <p class="text-color-bd font-18 fw-medium">Assemble it with the rods and paper sleeve</p>
+                  </div>
+                  <div class="d-flex gap-2 pb-12">
+                    <img
+                      width=""
+                      height=""
+                      src="{{ 'tick-circle.svg' | asset_url }}"
+                      alt="tick-circle"
+                    >
+                    <p class="text-color-bd font-18 fw-medium">Place the LED candle inside</p>
+                  </div>
+                  <div class="d-flex gap-2 pb-12">
+                    <img
+                      width=""
+                      height=""
+                      src="{{ 'tick-circle.svg' | asset_url }}"
+                      alt="tick-circle"
+                    >
+                    <p class="text-color-bd font-18 fw-medium">Launch your lantern when instructed!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Festival to Remember",
+  "settings": [],
+  "presets": [{
+    "name":" Festival to Remember"
+  }]
+}
+{% endschema %}

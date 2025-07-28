@@ -1,0 +1,50 @@
+{% stylesheet %}
+  .refound-policy {
+  padding: 60px 0;
+}
+
+@media (min-width: 900px) {
+  .refound-policy {
+    padding: 120px 0;
+  }
+}
+{% endstylesheet %}
+
+<section class="refound-policy">
+  <div class="container">
+    <div class="pb-24">
+      <img width= "" height=""
+        src="{{ 'releasewaiver-img-4.png' | asset_url }}"
+        alt="releasewaiver-img-4"
+        class="w-100"
+      />
+    </div>
+    <div class="row justify-content-between">
+      <div class="col-md-5 col-12 pr-32 pb-24 pb-md-0">
+        <h3 class="font-56 fw-bold text-white flex-nowrap">No Refund Policy</h3>
+      </div>
+      <div class="col-md-6 col-12 pl-32">
+        <p class="font-18 text-color-bd">
+          I agree to follow all laws and instructions from event officials, law
+          enforcement, and emergency personnel. I will wear appropriate clothing
+          and footwear, monitor my health during the event, and seek medical
+          help if needed. I confirm I am not under the influence of alcohol or
+          impairing drugs and have physician approval if taking medication.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Refund Policy",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Refund Policy"
+    }
+  ]
+}
+{% endschema %}

@@ -1,9 +1,1 @@
-{
-  "sections": {
-    "main": {
-      "type": "about-page",
-      "settings": {}
-    }
-  },
-  "order": ["main"]
-}
+{"sections":{"about_hero_banner_Vk3MzW":{"type":"about-hero-banner","name":"About Page hero","settings":{}},"why_this_event_dxqnpc":{"type":"why-this-event","name":"Why This Event Matters","settings":{}},"about_water_lantern_K9zQXF":{"type":"about-water-lantern","name":"About Us Water lantern","settings":{}},"client_testimonials_section_VNHPRk":{"type":"client-testimonials-section","name":"Client Testimonials","settings":{}},"event_faq_YwKM4t":{"type":"event-faq","name":"Event FAQ Section","settings":{}},"about_sky_lantern_DfAKRk":{"type":"about-sky-lantern","name":"About Sky lantern","settings":{}},"ticket_promo_section_bT7Af8":{"type":"ticket-promo-section","name":"Ticket Promo","settings":{}}},"order":["about_hero_banner_Vk3MzW","why_this_event_dxqnpc","about_water_lantern_K9zQXF","client_testimonials_section_VNHPRk","event_faq_YwKM4t","about_sky_lantern_DfAKRk","ticket_promo_section_bT7Af8"]}

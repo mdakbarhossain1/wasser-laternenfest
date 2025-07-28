@@ -1,0 +1,322 @@
+{% stylesheet %}
+  .event-page-got-question {
+  padding: 60px 0;
+}
+
+@media (min-width: 900px) {
+  .event-page-got-question {
+    padding: 120px 0;
+  }
+}
+
+.event-page-got-question .faq-item {
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.event-page-got-question .faq-item .faq-question {
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.089);
+  background: rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+}
+
+.event-page-got-question .faq-item .faq-question h2 {
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+
+.event-page-got-question .faq-item .toggle-icon {
+  transition: transform 0.3s ease;
+}
+
+.event-page-got-question .faq-item .faq-ans {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 24px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #f8b133 0%, #e5332a 99.61%);
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+.event-page-got-question .faq-item .faq-ans h2 {
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+
+.event-page-got-question .faq-item .faq-ans .ans {
+  color: #f4f5f7;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+@media (min-width: 1000px) {
+  .event-page-got-question .faq-item .faq-ans .ans {
+    font-size: 24px;
+  }
+}
+
+.event-page-got-question .faq-item.active .faq-question {
+  display: none;
+}
+
+.event-page-got-question .faq-item.active .faq-ans {
+  max-height: 1000px;
+  opacity: 1;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  pointer-events: auto;
+}
+
+.pb-56 {
+  padding-bottom: 56px;
+}
+
+/* Small screens (phones) */
+@media (max-width: 640px) {
+  .pb-56 {
+    padding-bottom: 32px;
+  }
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .pb-56 {
+    padding-bottom: 48px;
+  }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1025px) {
+  .pb-56 {
+    padding-bottom: 56px;
+  }
+}
+
+{% endstylesheet %}
+
+<section class="event-page-got-question">
+  <div class="container">
+    <h2 class="text-center font-56 fw-semibold text-white pb-56">
+      Got Question?
+    </h2>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 class="font-24 fw-semibold text-color-bd">
+            What is the Water Lantern Festival?
+          </h2>
+          <img
+            src="{{ 'faq-plus-icon.svg' | asset_url }}"
+            alt="plus"
+            class="toggle-icon"
+            width=""
+            height=""
+          />
+        </div>
+      </div>
+      <div class="faq-ans">
+        <div class="d-flex justify-content-between align-items-center pb-12">
+          <h2 class="font-24 fw-semibold text-white">
+            What is the Water Lantern Festival?
+          </h2>
+          <img
+            src="{{ 'faq-minus.svg' | asset_url }}"
+            alt="minus"
+            class="toggle-icon"
+            width=""
+            height=""
+          />
+        </div>
+        <p class="ans">
+          Water Lantern Festival is an incredible experience where thousands of
+          family, friends, and strangers celebrate life together. Water Lantern
+          Festival brings together individuals from all ages, backgrounds, and
+          walks of life to join in one emotional and memorable night. You'll
+          cherish these moments as you witness the beauty of thousands of
+          lanterns and the lights reflecting upon the water.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 class="font-24 fw-semibold text-color-bd">Who does it benefit?</h2>
+          <img
+            src="{{ 'faq-plus-icon.svg' | asset_url }}"
+            alt="plus"
+            class="toggle-icon"
+            width=""
+            height=""
+          />
+        </div>
+      </div>
+      <div class="faq-ans">
+        <div class="d-flex justify-content-between align-items-center pb-12">
+          <h2 class="font-24 fw-semibold text-white">Who does it benefit?</h2>
+          <img
+            src="{{ 'faq-minus.svg' | asset_url }}"
+            alt="minus"
+            class="toggle-icon"
+            width=""
+            height=""
+          />
+        </div>
+        <p class="ans">
+          A portion of proceeds from each ticket benefits local charities and
+          nonprofit organizations that focus on community, mental health, and
+          environmental causes.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 class="font-24 fw-semibold text-color-bd">Are there any hidden fees?</h2>
+          <img
+            src="{{ 'faq-plus-icon.svg' | asset_url }}"
+            alt="plus"
+            class="toggle-icon"
+            width=""
+            height=""
+          />
+        </div>
+      </div>
+      <div class="faq-ans">
+        <div class="d-flex justify-content-between align-items-center pb-12">
+          <h2 class="font-24 fw-semibold text-white">Are there any hidden fees?</h2>
+          <img
+            src="{{ 'faq-minus.svg' | asset_url }}"
+            alt="minus"
+            class="toggle-icon"
+            width=""
+            height=""
+          />
+        </div>
+        <p class="ans">
+          No. All fees are clearly displayed at checkout so you know exactly
+          what you're paying for in advance.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 class="font-24 fw-semibold text-color-bd">
+            What is included with my ticket?
+          </h2>
+          <img
+            src="{{ 'faq-plus-icon.svg' | asset_url }}"
+            alt="plus"
+            class="toggle-icon"
+            width=""
+            height=""
+          />
+        </div>
+      </div>
+      <div class="faq-ans">
+        <div class="d-flex justify-content-between align-items-center pb-12">
+          <h2 class="font-24 fw-semibold text-white">
+            What is included with my ticket?
+          </h2>
+          <img
+            src="{{ 'faq-minus.svg' | asset_url }}"
+            alt="minus"
+            class="toggle-icon"
+            width=""
+            height=""
+          />
+        </div>
+        <p class="ans">
+          Each ticket includes entry to the event, a floating lantern kit, LED
+          candle, a marker, and access to food trucks and entertainment.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 class="font-24 fw-semibold text-color-bd">Can I get a refund?</h2>
+          <img
+            src="{{ 'faq-plus-icon.svg' | asset_url }}"
+            alt="plus"
+            class="toggle-icon"
+            width=""
+            height=""
+          />
+        </div>
+      </div>
+      <div class="faq-ans">
+        <div class="d-flex justify-content-between align-items-center pb-12">
+          <h2 class="font-24 fw-semibold text-white">Can I get a refund?</h2>
+          <img
+            src="{{ 'faq-minus.svg' | asset_url }}"
+            alt="minus"
+            class="toggle-icon"
+            width=""
+            height=""
+          />
+        </div>
+        <p class="ans">
+          Tickets are non-refundable, but they can be transferred to a friend or
+          family member. In case of event rescheduling, all tickets remain valid
+          for the new date.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% javascript %}
+document.addEventListener('DOMContentLoaded', function() {
+  // Get all FAQ items
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  // Add click event to each FAQ question
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-ans');
+    
+    question.addEventListener('click', function() {
+      // Close all other FAQ items
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.classList.remove('active');
+        }
+      });
+      
+      // Toggle current item
+      item.classList.toggle('active');
+    });
+    
+    // Also make the answer clickable to close (optional)
+    answer.addEventListener('click', function(e) {
+      e.stopPropagation(); // Prevent event bubbling to the question
+      item.classList.remove('active');
+    });
+  });
+});
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Event FAQ Section",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Event FAQ Section"
+    }
+  ]
+}
+{% endschema %}

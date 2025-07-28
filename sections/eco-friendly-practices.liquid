@@ -1,0 +1,57 @@
+{% stylesheet %}
+    .event-page-night-to-remember {
+    padding: 60px 0;
+  }
+
+  @media (min-width: 900px) {
+    .event-page-night-to-remember {
+      padding: 120px 0;
+    }
+  }
+{% endstylesheet %}
+
+<section class="event-page-night-to-remember">
+  <div class="container">
+    <div class="friends-and-family">
+      <div class="row align-items-center">
+        <div class="col-xl-6 col-12 pr-32 d-flex pb-24 pb-xl-0">
+          <div>
+            <h2 class="font-56 text-white fw-semibold pb-24">Eco-Friendly Practices We Stand By</h2>
+            <p class="font-18 text-color-bd">
+              At Water Lantern Festival, we care deeply about the environment. Unlike sky lanterns, our water lanterns
+              stay nearby and are easy to collect. After each event, our team carefully gathers every lantern and even
+              removes extra litter—leaving the area cleaner than we found it.
+            </p>
+            <br>
+            <p class="font-18 text-color-bd">
+              Our lanterns are made from eco-friendly materials like biodegradable paper and wood, and we recycle the
+              LED candles to minimize waste and help protect local ecosystems.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-xl-6 col-12 pl-32 d-flex">
+          <div class="w-100">
+            <img
+              width=""
+              height=""
+              src="{{ 'event-page-eco-friendly-img.png' | asset_url }}"
+              alt="event-page-night-remember-section-img"
+              class="w-100 object-fit-cover"
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Eco-Friendly Practices",
+  "settings": [],
+  "presets": [{
+    "name": "Eco-Friendly Practices"
+  }]
+}
+{% endschema %}

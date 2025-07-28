@@ -1,0 +1,91 @@
+{% stylesheet %}
+  .release-waiver-hero {
+  position: relative;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+@media (min-width: 1200px) {
+  .release-waiver-hero {
+    min-height: 700px;
+  }
+}
+
+.release-waiver-hero-content {
+  margin-top: auto;
+  z-index: 2;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media (max-width: 992px) {
+  .release-waiver-hero-content {
+    margin-top: 55px;
+  }
+}
+
+.release-waiver-hero-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 120%;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .release-waiver-hero-title {
+    font-size: 40px;
+    margin-bottom: 0px;
+  }
+}
+
+@media (max-width: 480px) {
+  .release-waiver-hero-title {
+    font-size: 32px;
+    margin-bottom: 0px;
+  }
+}
+
+{% endstylesheet %}
+
+<section class="release-waiver-hero" style="
+    background: linear-gradient(
+        189.16deg,
+        rgba(4, 4, 13, 0) 0%,
+        rgb(4, 4, 13) 100%
+      ),
+      url('{{ 'release-waiver-hero.png' | asset_url }}') center/cover no-repeat;
+  ">
+  <div class="container hero-content">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-xl-7 col-12">
+        <h1 class="hero-title">Release waiver</h1>
+      </div>
+      <div class="col-xl-4 col-12">
+        <div class="event-card">
+          <p class="event-description">
+            By joining the Water Lantern Festival, you accept all risks and
+            agree not to hold the organizers or partners liable for any injury,
+            loss, or damage. You also consent to medical treatment if needed and
+            grant permission for media use without compensation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Release waiver Hero",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Release waiver Hero"
+    }
+  ]
+}
+{% endschema %}
