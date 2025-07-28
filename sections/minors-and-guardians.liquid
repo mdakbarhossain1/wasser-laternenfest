@@ -1,0 +1,89 @@
+
+{% stylesheet %}
+  .minors-and-guardians {
+  padding: 0 0 60px 0;
+}
+
+@media (min-width: 900px) {
+  .minors-and-guardians {
+    padding: 120px 0;
+  }
+}
+.mb-60 {
+    margin-bottom: 60px;
+}
+{% endstylesheet %}
+
+<section class="minors-and-guardians">
+  <div class="container">
+    <div class="mb-60">
+      <div class="row align-items-center g-0">
+        <div class="col-xl-6 col-12 mb-xl-0 mb-24 pr-30">
+          <div class="row align-items-end">
+            <div class="col-lg-6 col">
+              <img width= "" height=""
+                src="{{ 'releasewaiver-img-5.png' | asset_url }}"
+                alt="releasewaiver-img-5"
+                class="img-fluid w-100 object-fit-cover"
+              />
+            </div>
+            <div class="col-lg-6 col">
+              <img width= "" height=""
+                src="{{ 'releasewaiver-img-6.png' | asset_url }}"
+                alt="releasewaiver-img-6"
+                class="img-fluid w-100 object-fit-cover max-w-300"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-12">
+          <h2 class="font-56 text-white fw-semibold mb-24">
+            Minors and Guardians
+          </h2>
+          <p class="font-18 text-color-bd">
+            Participants under 18 must have this waiver signed by a parent or
+            legal guardian, who certifies the child’s health and ability to
+            participate safely. Guardians also authorize emergency medical
+            treatment if necessary.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row align-items-center flex-column-reverse flex-lg-row">
+      <div class="col-lg-6 pr-30">
+        <h2 class="font-56 text-white fw-semibold mb-24">
+          Legal Agreement & Signature
+        </h2>
+        <p class="font-18 text-color-bd">
+          I affirm that I am 18 years or older, have read and understand this
+          agreement, and voluntarily accept its terms. This waiver is a legally
+          binding contract and governs my rights and responsibilities regarding
+          the event.
+        </p>
+      </div>
+      <div class="col-lg-6 mb-24 mb-lg-0">
+        <div>
+          <img width= "" height=""
+            src="{{ 'releasewaiver-img-7.png' | asset_url }}"
+            alt="releasewaiver-img-7"
+            class="img-fluid w-100 h-100"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": " Minors and Guardians",
+  "settings": [],
+  "presets": [
+    {
+      "name": " Minors and Guardians"
+    }
+  ]
+}
+{% endschema %}

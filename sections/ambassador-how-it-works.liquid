@@ -1,0 +1,178 @@
+{% stylesheet %}
+      .mb-40 {
+        margin-bottom: 40px;
+      }
+
+      @media (max-width: 425px) {
+        .mb-40 {
+          margin-bottom: 24px;
+        }
+      }
+
+      .pr-113 {
+      padding-right: 0px;
+    }
+
+    @media (min-width: 1000px) {
+      .pr-113 {
+        padding-right: 113px;
+      }
+    }
+
+    .card {
+      position: relative;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 165, 0, 0.12) 0%,
+        rgba(255, 165, 0, 0.02) 100%
+      );
+      border-radius: 24px;
+      padding: 24px;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 24px;
+      padding: 1px;
+      background: linear-gradient(
+        108.16deg,
+        rgba(255, 165, 0, 0.4) 0%,
+        rgba(255, 165, 0, 0) 36.54%,
+        rgba(255, 165, 0, 0) 69.71%,
+        rgba(255, 165, 0, 0.4) 100%
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+        .enviromental-banner-img {
+          position: relative;
+          min-height: auto;
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+        }
+
+        @media (min-width: 1000px) {
+          .enviromental-banner-img {
+            min-height: 700px;
+          }
+        }
+
+        .common-card-section {
+          padding: 60px 0px;
+        }
+
+        @media (min-width: 1200px) {
+          .common-card-section {
+            padding: 120px 0px;
+          }
+        }
+
+        .text-color-f7 {
+      color: #f4f5f7;
+  }
+{% endstylesheet %}
+
+<section class="common-card-section">
+  <div class="container">
+    <div class="mb-40">
+      <div class="row justify-content-between align-items-center g-0">
+        <div class="col-lg-6 col-12 pr-113 mb-24 mb-lg-0">
+          <div>
+            <div class="mb-40">
+              <h2 class="font-56 fw-bold text-white mb-24">How it works</h2>
+              <p
+                class="font-18 text-color-bd"
+                style="font-family: Inter, sans-serif; line-height: 150%"
+              >
+                As a Water Lantern Festival Ambassador, you can earn money back for helping spread the word! You'll
+                receive $2 back for every person that uses your Ambassador code when they purchase tickets.
+              </p>
+            </div>
+            <div class="rounded overflow-x-hidden how-its-work">
+              <img
+                width=""
+                height=""
+                src="{{ 'How-it-works1.png' | asset_url }}"
+                alt="How-it-works1"
+                class="img-fluid w-100"
+                style="object-fit: cover"
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card mb-24">
+            <h3 class="font-32 fw-bold text-color-f7 mb-16">Register for your event</h3>
+            <p
+              class="font-18 text-color-bd"
+              style="font-family: Inter, sans-serif; line-height: 150%"
+            >
+              Find your event on the Locations Page and sign up.
+            </p>
+          </div>
+          <div class="card mb-24">
+            <h3 class="font-32 fw-bold text-color-f7 mb-16">Get your referral link</h3>
+            <p
+              class="font-18 text-color-bd"
+              style="font-family: Inter, sans-serif; line-height: 150%"
+            >
+              After registering, you’ll receive a unique code.
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="font-32 fw-bold text-color-f7 mb-16">Share & earn $2 per referral</h3>
+            <p
+              class="font-18 text-color-bd"
+              style="font-family: Inter, sans-serif; line-height: 150%"
+            >
+              Get $2 back for every friend who signs up using your code.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-between align-items-center g-0">
+      <div class="col-lg-6 col-12 pr-113 mb-24 mb-lg-0">
+        <p
+          class="font-18 text-color-bd"
+          style="font-family: Inter, sans-serif; line-height: 150%"
+        >
+          To get started, simply locate your event from our locations page and register for the event. Following your
+          registration you'll be provided with a unique referral link to share with friends so they can sign-up.
+        </p>
+      </div>
+      <div class="col-lg-6 col-12">
+        <img
+          width=""
+          height=""
+          src="{{ 'How-it-works2.png' | asset_url }}"
+          alt="How-it-works2"
+          class="img-fluid w-100"
+          style="object-fit: cover"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ambassador How It Works",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Ambassador How It Works"
+    }
+  ]
+}
+{% endschema %}

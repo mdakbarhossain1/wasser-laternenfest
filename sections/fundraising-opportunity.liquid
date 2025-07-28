@@ -1,0 +1,136 @@
+{% stylesheet %}
+    .fundraising-opportunity-section {
+      padding: 60px 0;
+    }
+
+    @media (min-width: 900px) {
+      .fundraising-opportunity-section {
+        padding: 120px 0;
+      }
+    }
+
+    .pr-16 {
+  padding-right: 0;
+}
+
+@media (min-width: 800px) {
+  .pr-16 {
+    padding-right: 16px;
+  }
+}
+
+.pl-16 {
+  padding-left: 0;
+}
+
+@media (min-width: 800px) {
+  .pl-16 {
+    padding-left: 16px;
+  }
+}
+
+    .fundraising-opportunity-section .gradient-bg {
+      background: linear-gradient(90deg, #f8b133 0%, #e5332a 99.61%);
+      padding: 10px;
+      border-radius: 100px;
+      width: 40px;
+      height: 40px;
+    }
+
+    @media (min-width: 600px) {
+      .fundraising-opportunity-section .gradient-bg {
+        padding: 20px;
+        width: fit-content;
+        height: fit-content;
+      }
+    }
+
+    .fundraising-opportunity-section .fundraising-opportunity-section-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .fundraising-opportunity-section .fundraising-opportunity-section-card h4 {
+      font-family: "Inter", sans-serif;
+    }
+
+    .pb-32 {
+    padding-bottom: 20px;
+  }
+
+  @media (min-width: 900px) {
+    .pb-32 {
+      padding-bottom: 32px;
+    }
+  }
+  .font-32 {
+  font-size: 24px;
+}
+
+@media (min-width: 1000px) {
+  .font-32 {
+    font-size: 32px;
+  }
+}
+{% endstylesheet %}
+
+<section class="fundraising-opportunity-section">
+  <div class="container">
+    <h3 class="text-center font-56 text-white fw-semibold pb-56">Fundraising opportunity</h3>
+    <div class="row g-0">
+      <div class="col-lg-6 col-12 pr-16 mb-24 mb-md-0">
+        <div class="fundraising-opportunity-section-card text-center">
+          <div class="pb-32">
+            <img
+              width=""
+              height=""
+              src="{{ 'fundraising-opportunity-img-2.svg' | asset_url }}"
+              alt="fundraising-opportunity-img-2"
+              class="gradient-bg mx-auto d-block"
+            >
+          </div>
+
+          <h4 class="font-32 text-color-bd fw-medium pb-16">Event Crew Fundraising</h4>
+          <p class="font-18 text-color-bd">
+            Local groups and clubs can earn funds by helping run the Water Lantern Festival! Get paid per volunteer per
+            shift while supporting a meaningful event and raising money for your goals—like new equipment or group
+            activities.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-12 pl-16">
+        <div class="fundraising-opportunity-section-card text-center">
+          <div class="pb-32">
+            <img
+              width=""
+              height=""
+              src="{{ 'fundraising-opportunity-img-1.svg' | asset_url }}"
+              alt="fundraising-opportunity-img-1"
+              class="gradient-bg mx-auto d-block"
+            >
+          </div>
+          <h4 class="font-32 text-color-bd fw-medium pb-16">Ticket Sales Fundraising</h4>
+          <p class="font-18 text-color-bd">
+            Teams or groups can raise funds by selling Water Lantern Festival tickets and earning a profit for each one
+            sold. It’s a simple way to support your goals—from new jerseys to tournament costs—while promoting a magical
+            event.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fundraising Opportunity",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Fundraising Opportunity"
+    }
+  ]
+}
+{% endschema %}

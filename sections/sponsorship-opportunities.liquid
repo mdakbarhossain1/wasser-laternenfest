@@ -1,0 +1,94 @@
+{% stylesheet %}
+  .sponsorship-opportunities {
+  padding: 60px 0;
+}
+
+@media (min-width: 900px) {
+  .sponsorship-opportunities {
+    padding: 120px 0;
+  }
+}
+
+{% endstylesheet %}
+
+
+<section class="sponsorship-opportunities">
+  <div class="container">
+    <div class="sponsorship-opportunities-section">
+      <div class="row align-items-center">
+        <div class="col-xl-6 col-12 pl-32 d-flex pb-56 pb-xl-0">
+          <div>
+            <h2 class="font-56 text-white fw-semibold pb-24">
+              Sponsorship Opportunities
+            </h2>
+            <p class="font-18 text-color-bd pb-40">
+              We offer a range of sponsorship packages designed to meet your
+              marketing goals and budget. Whether you're aiming for top-tier
+              visibility or meaningful community interaction, there’s a perfect
+              option for you.
+            </p>
+            <div class="d-flex flex-column gap-3">
+              <div>
+                <div class="d-flex gap-2 pb-16">
+                  <img width="" height=""  src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" />
+                  <p class="text-color-bd font-18 fw-medium">
+                    Presenting Sponsor
+                  </p>
+                </div>
+                <p class="text-color-bd font-16">
+                  Top-tier exposure including stage mentions, logo on lanterns,
+                  and headline presence on all marketing.
+                </p>
+              </div>
+              <div>
+                <div class="d-flex gap-2 pb-16">
+                  <img width="" height=""  src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" />
+                  <p class="text-color-bd font-18 fw-medium">
+                    Supporting Sponsor
+                  </p>
+                </div>
+                <p class="text-color-bd font-16">
+                  Mid-level package with local event visibility, social media
+                  features, and logo placement.
+                </p>
+              </div>
+              <div>
+                <div class="d-flex gap-2 pb-16">
+                  <img width="" height=""  src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" />
+                  <p class="text-color-bd font-18 fw-medium">
+                    Local Vendor Partner
+                  </p>
+                </div>
+                <p class="text-color-bd font-16">
+                  Perfect for small businesses looking to connect with their
+                  local community on-site.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-12 pr-32 d-flex pb-24 pb-xl-0">
+          <img width="" height="" 
+            src="{{ 'sponsorship-opportunities.png' | asset_url }}"
+            alt="event-page-night-remember-section-img"
+            class="w-100"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+{% schema %}
+{
+  "name": "Sponsorship Opportunities",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Sponsorship Opportunities"
+    }
+  ]
+}
+{% endschema %}

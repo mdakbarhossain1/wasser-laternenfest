@@ -1,0 +1,911 @@
+{% stylesheet %}
+    .font-20 {
+      font-size: 16px;  /* Mobile (default) */
+    }
+
+    @media (min-width: 900px) {
+      .font-20 {
+        font-size: 20px;  /* Desktop (≥900px) */
+      }
+    }
+
+    .mb-64 {
+      margin-bottom: 34px; /* Default for mobile */
+    }
+
+    @media (min-width: 900px) {
+      .mb-64 {
+        margin-bottom: 64px; /* Applies on screens ≥ 900px */
+      }
+    }
+
+    .pb-40 {
+      padding-bottom: 40px;
+    }
+
+    @media (min-width: 900px) {
+      .pb-40 {
+        padding-bottom: 40px;
+      }
+    }
+
+    .font-64 {
+      font-size: 40px;
+    }
+
+    @media (min-width: 900px) {
+      .font-64 {
+        font-size: 64px;
+      }
+    }
+
+    .text-color-secondary-gradient {
+      background: linear-gradient(90deg, #f8b133 0%, #e5332a 99.61%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-color-orange-300 {
+      color:#ffa500;
+    }
+
+    .ticket-prices-section {
+      padding: 60px 0px;
+    }
+
+    @media (min-width: 900px) {
+      .ticket-prices-section {
+        padding: 120px 0px;
+      }
+    }
+
+    .ticket-card-section {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 32px;
+    }
+
+    @media (min-width: 1000px) {
+      .ticket-card-section {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1100px) {
+      .ticket-card-section {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .ticket-single-card {
+      position: relative;
+      overflow: hidden;
+      padding: 32px;
+      border-radius: 32px;
+      background: linear-gradient(180deg, rgba(255, 165, 0, 0.12) 0%, rgba(255, 165, 0, 0.02) 100%);
+    }
+
+    .ticket-single-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 32px;
+      padding: 1px;
+      background: linear-gradient(80deg, #f8b133, #e5332a);
+      -webkit-mask:
+        linear-gradient(#fff, #fff) content-box,
+        linear-gradient(#fff, #fff);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .ticket-btn-gradients {
+      background: linear-gradient(45deg, #f8b133, #e5332a);
+      border: none;
+      border-radius: 30px;
+      padding: 20px;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 100%;
+      color: #ffffff;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+
+    .ticket-btn-gradients:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(229, 51, 42, 0.4);
+    }
+
+    @media (max-width: 500px) {
+      .ticket-btn-gradients {
+        width: 100%;
+      }
+    }
+
+    /* modal  */
+
+    /* Modal Base Styles */
+  .ticket-modal .custom-ticket-modal .modal-content,
+  .ticket-modal2 .custom-ticket-modal .modal-content {
+    --bs-modal-bg: #04040d !important;
+    --bs-modal-border-color: rgba(255, 255, 255, 0.4) !important;
+    --bs-modal-color: #fff !important;
+    border-radius: 32px;
+    padding: 10px;
+    overflow: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  @media (min-width: 900px) {
+    .ticket-modal .custom-ticket-modal .modal-content {
+      padding: 32px;
+    }
+    .ticket-modal2 .custom-ticket-modal .modal-content {
+      padding: 32px;
+      height: max-content;
+    }
+  }
+
+  /* Close Button */
+  .custom-ticket-modal .btn-close {
+    filter: invert(1); /* makes it white */
+  }
+
+  /* Backdrop */
+  .modal-backdrop.show {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+  }
+
+  /* Ticket Body */
+  .tickets-body {
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(180deg, rgba(255, 165, 0, 0.12) 0%, rgba(255, 165, 0, 0.02) 100%);
+  }
+
+  @media (min-width: 500px) {
+    .tickets-body {
+      padding: 20px;
+    }
+  }
+
+  /* Ticket Card */
+  .ticket-modal-card {
+    padding: 10px;
+    border-radius: 16px;
+    border: 1px solid rgba(96, 96, 96, 0.007);
+    background: rgba(52, 36, 26, 0.451);
+  }
+
+  @media (min-width: 900px) {
+    .ticket-modal-card {
+      padding: 20px;
+    }
+  }
+
+  /* Gradient Border */
+  .gradient-border {
+    position: relative;
+    overflow: hidden;
+    padding: 5px;
+    border-radius: 8px;
+    font-size: 10px;
+  }
+
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    padding: 1px;
+    background: linear-gradient(80deg, #f8b133, #e5332a);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  @media (min-width: 900px) {
+    .gradient-border {
+      padding: 12px;
+      font-size: 16px;
+    }
+  }
+
+  /* Buttons */
+  .btn-gradient {
+    background: linear-gradient(90deg, #f97316, #fcd34d);
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 100px;
+    transition: 0.3s;
+    font-family: "Inter", sans-serif;
+    width: 113px;
+  }
+
+  .btn-gradient:hover {
+    background: linear-gradient(90deg, #f59e0b, #fde68a);
+  }
+
+  .btn-gray {
+    background: #4e516c;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 100px;
+    transition: 0.3s;
+    font-family: "Inter", sans-serif;
+    width: 113px;
+  }
+
+  @media (min-width: 500px) {
+    .btn-gray {
+      padding: 20px;
+    }
+  }
+
+  /* Close Button */
+  .custom-close-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .custom-close-btn img {
+    width: 24px;
+    height: 24px;
+    border: none;
+  }
+
+  /* Stepper */
+  .stepper {
+    display: flex;
+    gap: 12px;
+  }
+
+  .step {
+    width: 100px;
+    height: 12px;
+    border-radius: 11px;
+    background: #2d2d2d;
+    transition: background 0.3s;
+  }
+
+  .step.active {
+    background: linear-gradient(90deg, #f8b133 0%, #e5332a 99.61%);
+  }
+
+  @media (min-width: 900px) {
+    .step {
+      width: 150px;
+    }
+  }
+
+  /* Input Fields */
+  .input-field,
+  .input-field-phone {
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    padding: 12px;
+    color: #a3a7bd;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid transparent;
+  }
+
+  .input-field-phone {
+    padding-left: 60px;
+  }
+
+  .input-field:focus {
+    outline: none;
+    border: 1px solid #f8b133;
+  }
+
+  /* Autofill Fix */
+  .input-field:-webkit-autofill,
+  .input-field:-webkit-autofill:focus,
+  .input-field:-webkit-autofill:hover,
+  .input-field:-webkit-autofill:active {
+    box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.05) inset !important;
+    -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.05) inset !important;
+    -webkit-text-fill-color: #a3a7bd !important;
+    transition: background-color 9999s ease-in-out 0s !important;
+    border-radius: 100px;
+  }
+
+  /* Hide number input spinner */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  /* Select Menu */
+  .selct-menu .select-wrapper {
+    position: relative;
+    display: inline-block;
+    padding: 1px;
+    border-radius: 8px;
+  }
+
+  .selct-menu .select-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    padding: 1px;
+    background: linear-gradient(80deg, #f8b133, #e5332a);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .selct-menu .select-wrapper select {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 100px;
+    background-color: transparent;
+    color: #fff;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-size: 16px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='%23fff' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 18px;
+    padding-right: 40px;
+    cursor: pointer;
+  }
+
+  .selct-menu .select-wrapper select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(233, 91, 35, 0.4);
+  }
+
+  .selct-menu .select-wrapper select option {
+    background-color: black;
+    color: white;
+  }
+{% endstylesheet %}
+
+<section class="ticket-prices-section">
+  <div class="container">
+    <div class="mb-56">
+      <h2 class="text-center text-white font-56 fw-bold mb-32">Ticket Prices</h2>
+      <p class="font-24 text-color-bd text-center">
+        <span class="text-color-secondary-gradient">1000+</span> tickets booked in last 24 hours
+      </p>
+    </div>
+
+    <div class="mb-64">
+      <div class="ticket-card-section">
+        <!-- General Admission Card -->
+        <div class="ticket-single-card">
+          <div class="d-flex flex-column justify-content-between w-100 h-100">
+            <div class="pb-32">
+              <div>
+                <p class="text-color-secondary-gradient">General Admission</p>
+                <h5 class="font-64 fw-bold text-white pb-40">$30.99</h5>
+                <p class="text-color-bd font-20 fw-medium pb-40">
+                  Enjoy the full Water Lantern Festival experience! Each General Admission ticket includes
+                </p>
+              </div>
+
+              <div class="space-y-16">
+                <div class="d-flex gap-2 align-items-start">
+                  <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                  <p class="text-color-bd font-18 fw-medium">Entry wristband for festival access</p>
+                </div>
+                <div class="d-flex gap-2 align-items-start">
+                  <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                  <p class="text-color-bd font-18 fw-medium">
+                    One floating lantern kit that includes a lantern, tealight, marker, playing cards & conversation
+                    cards
+                  </p>
+                </div>
+                <div class="d-flex gap-2 align-items-start">
+                  <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                  <p class="text-color-bd font-18 fw-medium">A drawstring bag</p>
+                </div>
+                <div class="d-flex gap-2 align-items-start">
+                  <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                  <p class="text-color-bd font-18 fw-medium">Entry into our scavenger hunt giveaway</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-color-secondary-gradient pb-24">Special pricing available for groups of 3 or more</p>
+              <button class="btn ticket-btn-gradients" data-bs-toggle="modal" data-bs-target="#ticketModal">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIP Ticket Card -->
+        <div class="ticket-single-card">
+          <div class="d-flex flex-column justify-content-between w-100 h-100">
+            <div class="pb-32">
+              <div>
+                <p class="text-color-secondary-gradient">VIP Ticket</p>
+                <h5 class="font-64 fw-bold text-white pb-40">$56.99</h5>
+                <p class="text-color-bd font-20 fw-medium pb-40">
+                  Upgrade your festival experience with VIP access! Each VIP ticket includes
+                </p>
+              </div>
+
+              <div class="space-y-16">
+                <div class="d-flex gap-2 align-items-start">
+                  <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                  <p class="text-color-bd font-18 fw-medium">Entry wristband for festival access</p>
+                </div>
+                <div class="d-flex gap-2 align-items-start">
+                  <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                  <p class="text-color-bd font-18 fw-medium">Everything from General Admission</p>
+                </div>
+                <div class="d-flex gap-2 align-items-start">
+                  <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                  <p class="text-color-bd font-18 fw-medium">Exclusive access to the VIP tent</p>
+                </div>
+                <div class="d-flex gap-2 align-items-start">
+                  <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                  <p class="text-color-bd font-18 fw-medium">A commemorative Water Lantern Festival T-shirt</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-color-secondary-gradient pb-24">The Ultimate Experience! (460 remaining)</p>
+              <button class="btn ticket-btn-gradients" data-bs-toggle="modal" data-bs-target="#ticketModal">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Date Night Special Card -->
+        <div class="ticket-single-card">
+          <div class="d-flex flex-column justify-content-between w-100 h-100">
+            <div class="pb-32">
+              <div>
+                <p class="text-color-secondary-gradient">Date Night Special</p>
+                <h5 class="font-64 fw-bold text-white pb-40">$77.16</h5>
+                <p class="text-color-bd font-20 fw-medium pb-40">
+                  Make it a night to remember! This romantic package includes
+                </p>
+              </div>
+
+              <div class="space-y-16">
+                <div class="d-flex gap-2 align-items-start">
+                  <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                  <p class="text-color-bd font-18 fw-medium">Two General Admission tickets</p>
+                </div>
+                <div class="d-flex gap-2 align-items-start">
+                  <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                  <p class="text-color-bd font-18 fw-medium">One cozy Air Chair</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-color-secondary-gradient pb-24">The Ultimate Experience! (460 remaining)</p>
+              <button class="btn ticket-btn-gradients" data-bs-toggle="modal" data-bs-target="#ticketModal">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Friends & Family Section -->
+    <div class="friends-and-family">
+      <div class="row align-items-center">
+        <div class="col-xl-6 col-12 pr-32 d-flex pb-32 pb-xl-0">
+          <div>
+            <h5 class="font-24 fw-medium text-color-bd pb-12">Group Deal</h5>
+            <h2 class="font-40 text-white fw-bold pb-77">Friends & Family (20% OFF)</h2>
+            <p class="font-20 fw-medium text-color-bd pb-40">
+              Bring your crew and enjoy the full Water Lantern Festival experience—at a discounted rate! This ticket
+              option is sold in increments of 4 and includes four General Admission tickets. Each person in the pack
+              will receive:
+            </p>
+            <div class="space-y-16">
+              <div class="d-flex gap-2 align-items-start">
+                <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                <p class="text-color-bd font-18 fw-medium">An entry wristband for festival access</p>
+              </div>
+              <div class="d-flex gap-2 align-items-start">
+                <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                <p class="text-color-bd font-18 fw-medium">
+                  One floating lantern kit (lantern, tealight candle, and marker)
+                </p>
+              </div>
+              <div class="d-flex gap-2 align-items-start">
+                <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                <p class="text-color-bd font-18 fw-medium">A set of playing cards and conversation cards</p>
+              </div>
+              <div class="d-flex gap-2 align-items-start">
+                <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                <p class="text-color-bd font-18 fw-medium">A commemorative drawstring bag</p>
+              </div>
+              <div class="d-flex gap-2 align-items-start">
+                <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                <p class="text-color-bd font-18 fw-medium">Entry into our scavenger hunt giveaway</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-12 pl-32 d-flex">
+          <div class="w-100">
+            <div class="pb-32">
+              <img src="{{ 'Friends-Family.png' | asset_url }}" alt="Friends&Family" class="w-100" width="" height="">
+            </div>
+            <div>
+              <p class="text-color-secondary-gradient pb-24 font-18 fw-medium">
+                It's the perfect way to celebrate with friends and family!
+              </p>
+              <button class="btn ticket-btn-gradients" data-bs-toggle="modal" data-bs-target="#ticketModal">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal Components -->
+<div class="container">
+  <!-- Ticket Selection Modal -->
+  <div class="ticket-modal">
+    <div class="modal fade custom-ticket-modal" id="ticketModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg modal-fullscreen-sm-down">
+        <div class="modal-content">
+          <div class="mb-40 d-flex justify-content-center">
+            <div class="stepper">
+              <div class="step active"></div>
+              <div class="step"></div>
+              <div class="step"></div>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between pb-24">
+            <div style="width: 40px"></div>
+            <div class="text-center flex-grow-1">
+              <h2 class="font-24 fw-bold text-white m-0">Tickets</h2>
+            </div>
+            <div>
+              <button
+                type="button"
+                class="custom-close-btn border-0 bg-transparent"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <img src="{{ 'close-modal-btn.svg' | asset_url }}" alt="tick-circle" width="" height="">
+              </button>
+            </div>
+          </div>
+
+          <div class="ticket-modal-body">
+            <div class="mb-32">
+              <div class="tickets-body">
+                <!-- General Admission Option -->
+                <div class="ticket-modal-card mb-24">
+                  <div class="d-flex justify-content-between gap-lg-5 gap-1">
+                    <div>
+                      <div class="ticket-modal-title mb-20">
+                        <h2 class="font-20 font-inter fw-medium pb-12">
+                          General Admission - Discounted for families and groups 3+
+                        </h2>
+                        <p class="font-14 text-color-bd">
+                          Enjoy the full Water Lantern Festival experience! Each General Admission ticket includes
+                        </p>
+                      </div>
+                      <div class="mb-20">
+                        <div class="space-y-16">
+                          <div class="d-flex gap-2 align-items-start">
+                            <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                            <p class="text-color-bd font-18 fw-medium">Entry wristband for festival access</p>
+                          </div>
+                          <div class="d-flex gap-2 align-items-start">
+                            <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                            <p class="text-color-bd font-18 fw-medium">
+                              One floating lantern kit that includes a lantern, tealight, marker, playing cards &
+                              conversation cards
+                            </p>
+                          </div>
+                          <div class="d-flex gap-2 align-items-start">
+                            <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                            <p class="text-color-bd font-18 fw-medium">A drawstring bag</p>
+                          </div>
+                          <div class="d-flex gap-2 align-items-start">
+                            <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                            <p class="text-color-bd font-18 fw-medium">Entry into our scavenger hunt giveaway</p>
+                          </div>
+                        </div>
+                      </div>
+                      <p class="font-14 text-color-bd">Special pricing available for groups of 3 or more!</p>
+                    </div>
+                    <div>
+                      <h6 class="text-color-orange-300 font-18 fw-medium font-inter pb-16">$30.99</h6>
+                      <div class="selct-menu">
+                        <div class="select-wrapper">
+                          <select>
+                            <option value="0" selected>0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- VIP Ticket Option -->
+                <div class="ticket-modal-card mb-24">
+                  <div class="d-flex justify-content-between gap-lg-5 gap-1">
+                    <div>
+                      <div class="ticket-modal-title mb-20">
+                        <h2 class="font-20 font-inter fw-medium pb-12">
+                          VIP Ticket - The Ultimate Experience! (454 remaining)
+                        </h2>
+                        <p class="font-14 text-color-bd">
+                          Upgrade your festival experience with VIP access! Each VIP ticket includes:
+                        </p>
+                      </div>
+                      <div class="mb-20">
+                        <div class="space-y-16">
+                          <div class="d-flex gap-2 align-items-start">
+                            <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                            <p class="text-color-bd font-18 fw-medium">Everything from General Admission</p>
+                          </div>
+                          <div class="d-flex gap-2 align-items-start">
+                            <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                            <p class="text-color-bd font-18 fw-medium">Exclusive access to the VIP tent</p>
+                          </div>
+                          <div class="d-flex gap-2 align-items-start">
+                            <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                            <p class="text-color-bd font-18 fw-medium">
+                              A commemorative Water Lantern Festival T-shirt
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <h6 class="text-color-orange-300 font-18 fw-medium font-inter pb-16">$56.99</h6>
+                      <div class="selct-menu">
+                        <div class="select-wrapper">
+                          <select>
+                            <option value="0" selected>0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Date Night Special Option -->
+                <div class="ticket-modal-card mb-24">
+                  <div class="d-flex justify-content-between gap-lg-5 gap-1">
+                    <div>
+                      <div class="ticket-modal-title mb-20">
+                        <h2 class="font-20 font-inter fw-medium pb-12">
+                          Date Night Special - 25% Off! (Most Popular!)
+                        </h2>
+                        <p class="font-14 text-color-bd">
+                          Make it a night to remember! This romantic package includes:
+                        </p>
+                      </div>
+                      <div class="mb-20">
+                        <div class="space-y-16">
+                          <div class="d-flex gap-2 align-items-start">
+                            <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                            <p class="text-color-bd font-18 fw-medium">Two General Admission ticketss</p>
+                          </div>
+                          <div class="d-flex gap-2 align-items-start">
+                            <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                            <p class="text-color-bd font-18 fw-medium">
+                              One cozy park blanket or Mandala perfect for snuggling under the lights
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <h6 class="text-color-orange-300 font-18 fw-medium font-inter pb-16">$79.99</h6>
+                      <div>
+                        <div class="selct-menu">
+                          <div class="select-wrapper">
+                            <select>
+                              <option value="0" selected>0</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Group Deal Option -->
+                <div class="ticket-modal-card mb-24 mb-sm-2">
+                  <div class="d-flex justify-content-between gap-lg-5 gap-1">
+                    <div class="mb-24 mb-md-0">
+                      <div class="ticket-modal-title mb-20">
+                        <h2 class="font-20 font-inter fw-medium pb-12">Group Deal - Friends & Family (20% OFF)</h2>
+                        <p class="font-14 text-color-bd">
+                          Bring your crew and enjoy the full Water Lantern Festival experience—at a discounted rate!
+                          This ticket option is sold in increments of 4 and includes four General Admission tickets.
+                          Each person in the pack will receive:
+                        </p>
+                      </div>
+                      <div class="mb-20">
+                        <div class="space-y-16">
+                          <div class="d-flex gap-2 align-items-start">
+                            <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                            <p class="text-color-bd font-18 fw-medium">An entry wristband for festival access</p>
+                          </div>
+                          <div class="d-flex gap-2 align-items-start">
+                            <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                            <p class="text-color-bd font-18 fw-medium">
+                              One floating lantern kit (lantern, tealight candle, and marker)
+                            </p>
+                          </div>
+                          <div class="d-flex gap-2 align-items-start">
+                            <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                            <p class="text-color-bd font-18 fw-medium">A set of playing cards and conversation cards</p>
+                          </div>
+                          <div class="d-flex gap-2 align-items-start">
+                            <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                            <p class="text-color-bd font-18 fw-medium">A commemorative drawstring bag</p>
+                          </div>
+                          <div class="d-flex gap-2 align-items-start">
+                            <img src="{{ 'tick-circle.svg' | asset_url }}" alt="tick-circle" width="" height="">
+                            <p class="text-color-bd font-18 fw-medium">Entry into our scavenger hunt giveaway</p>
+                          </div>
+                        </div>
+                      </div>
+                      <p class="font-14 text-color-bd">It's the perfect way to celebrate with friends and family!</p>
+                    </div>
+                    <div>
+                      <h6 class="text-color-orange-300 font-18 fw-medium font-inter pb-16">$24.99</h6>
+                      <div class="selct-menu">
+                        <div class="select-wrapper">
+                          <select>
+                            <option value="0" selected>0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ticket-total text-end">Total: <span id="ticketTotal">$0.00</span></div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center">
+              <button class="btn btn-gradient" data-bs-target="#ticketModal2" data-bs-toggle="modal">Next</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Personal Details Modal -->
+  <div class="ticket-modal2">
+    <div
+      class="modal fade custom-ticket-modal"
+      id="ticketModal2"
+      tabindex="-1"
+      aria-hidden="true"
+      aria-labelledby="exampleModalToggleLabel2"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg modal-fullscreen-sm-down">
+        <div class="modal-content">
+          <div class="mb-40 d-flex justify-content-center">
+            <div class="stepper">
+              <div class="step active"></div>
+              <div class="step"></div>
+              <div class="step"></div>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between pb-24">
+            <div style="width: 40px"></div>
+            <div class="text-center flex-grow-1">
+              <h2 class="font-24 fw-bold text-white m-0">Personal Details</h2>
+            </div>
+            <div>
+              <button
+                type="button"
+                class="custom-close-btn border-0 bg-transparent"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <img src="{{ 'close-modal-btn.svg' | asset_url }}" alt="tick-circle" width="" height="">
+              </button>
+            </div>
+          </div>
+
+          <div class="ticket-modal-body">
+            <div class="mb-32">
+              <div class="tickets-form">
+                <form action="">
+                  <div class="input-section pb-24">
+                    <div class="w-100 mb-20">
+                      <label for="html" class="pb-8 text-white font-18 fw-normal"> Your Name * </label>
+                      <input type="text" placeholder="First Name" class="input-field">
+                    </div>
+
+                    <div class="w-100 mb-20">
+                      <label for="html" class="pb-8 text-white font-18 fw-normal"> Email * </label>
+                      <input type="email" placeholder="Email *" class="input-field">
+                    </div>
+                    <div class="w-100">
+                      <label for="html" class="pb-8 text-white font-18 fw-normal"> Phone * </label>
+                      <div class="select-menu-wrapper">
+                        <div class="select-menu d-flex gap-1 align-items-center">
+                          <img src="{{ 'bangladesh-icon.svg' | asset_url }}" alt="bangladesh-icon" width="" height="">
+                          <img src="{{ 'dropdown-menu.svg' | asset_url }}" alt="bangladesh-icon" width="" height="">
+                        </div>
+                        <input type="number" placeholder="Phone" class="input-field-phone">
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                <p class="font-16 fw-normal text-color-bd">The lead booker must be 18+ at time of travel</p>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between gap-2 align-items-center">
+              <button class="btn btn-gray" data-bs-toggle="modal" data-bs-target="#ticketModal">Previous</button>
+              <a href="/checkout-page.html">
+                <button class="btn btn-gradient">Next</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ticket Prices Section",
+  "settings": [],
+  "presets": [{
+    "name": "Ticket Prices Section"
+  }]
+}
+{% endschema %}

@@ -1,0 +1,93 @@
+{% stylesheet %}
+  .pr-60 {
+      padding-right: 0px;
+  }
+  @media (min-width: 1000px) {
+      .pr-60 {
+    padding-right: 60px;
+      }
+  }
+
+  .copmany-info-pr-32{
+    padding-right: 32px;
+  }
+
+        .company-information {
+            padding-bottom: 100px;
+            z-index: 2;
+            padding-left: 40px;
+            padding-right: 40px;
+          }
+    @media (min-width: 900px) {
+        .company-information {
+            padding: 120px 0;
+        }
+    }
+{% endstylesheet %}
+<section class="company-information py-5">
+  <div class="container">
+    <div class="row g-0 align-items-center">
+      <!-- Left Side: Images -->
+      <div class="col-lg-6 mb-4 pr-60">
+        <div class="row g-0">
+          <!-- First Column -->
+          <div class="col-6 copmany-info-pr-32">
+            <img
+              width=""
+              height=""
+              src="{{ 'company-information-1.png' | asset_url }}"
+              alt="Company Info 1"
+              class="w-100 h-100 object-fit-cover radius-23"
+            >
+          </div>
+
+          <!-- Second Column -->
+          <div class="col-6">
+            <div class="d-flex flex-column gap-32">
+              <img
+                width=""
+                height=""
+                src="{{ 'company-information-22.png' | asset_url }}"
+                alt="Company Info 2"
+                class="w-100"
+              >
+              <img
+                width=""
+                height=""
+                src="{{ 'company-information-3.png' | asset_url }}"
+                alt="Company Info 3"
+                class="w-100"
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side: Text -->
+      <div class="col-lg-6">
+        <h2 class="common-font-title mb-24">Company Information</h2>
+        <p class="event-details">
+          The Water Lantern Festival began in 2018 with 34 events and over 130,000 attendees. Now, with 100+ festivals
+          planned worldwide, it’s growing bigger each year!
+        </p>
+        <br>
+        <p class="event-details">
+          Backed by a team with experience in hundreds of global events and over 1 million attendees, we’re dedicated to
+          delivering a magical, 5-star festival experience you won’t forget.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Company Information",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Company Information"
+    }
+  ]
+}
+{% endschema %}

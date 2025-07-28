@@ -1,0 +1,29 @@
+<section class="event-section">
+  <h2>{{ section.settings.event_title }}</h2>
+  <p>{{ section.settings.event_description }}</p>
+</section>
+
+{% schema %}
+{
+  "name": "Event Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "event_title",
+      "label": "Event Title",
+      "default": "Water Lantern Festival"
+    },
+    {
+      "type": "textarea",
+      "id": "event_description",
+      "label": "Event Description",
+      "default": "Join us for a magical evening of water lanterns, food, and music!"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Basic Event Block"
+    }
+  ]
+}
+{% endschema %}

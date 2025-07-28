@@ -1,0 +1,58 @@
+{% stylesheet %}
+    .enviromental-banner-img {
+    position: relative;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  @media (min-width: 1000px) {
+    .enviromental-banner-img {
+      min-height: 700px;
+    }
+  }
+{% endstylesheet %}
+
+<section
+  class="enviromental-banner-img"
+  style="
+        background: linear-gradient(
+       189.16deg,
+       rgba(4, 4, 13, 0) 0%,
+       rgb(4, 4, 13) 100%
+     ),
+    url('{{ 'environmental-banner.png' | asset_url }}') center/cover no-repeat;
+  "
+>
+  <div class="container hero-content">
+    <div class="row align-items-end">
+      <div class="col-xl-7 col-12">
+        <h1 class="font-80 hero-title">Environmental</h1>
+      </div>
+      <div class="col-xl-5 col-12">
+        <div class="event-card">
+          <p
+            class="font-18 text-white"
+            style="font-family: Inter, sans-serif; line-height: 150%"
+          >
+            At the Water Lantern Festival, we believe that honoring nature is just as important as celebrating
+            community. That’s why we are committed to creating an environmentally responsible experience at every event.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Environmental Hero",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Environmental Hero"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,404 @@
+{% stylesheet %}
+  .contact-us-form {
+  padding: 60px 0;
+}
+
+@media (min-width: 900px) {
+  .contact-us-form {
+    padding: 120px 0;
+  }
+}
+
+.contact-us-form .form-gradient-bg {
+  padding: 24px;
+  border-radius: 32px;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: linear-gradient(180deg, rgba(255, 165, 0, 0.12) 0%, rgba(255, 165, 0, 0.02) 100%);
+}
+
+.contact-us-form .form-gradient-bg .input-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+@media (min-width: 700px) {
+  .contact-us-form .form-gradient-bg .input-section {
+    flex-direction: row;
+    gap: 32px;
+  }
+}
+
+.contact-us-form .form-gradient-bg .select-menu-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-us-form .form-gradient-bg .input-field {
+  flex: 1;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  padding: 12px;
+  color: #a3a7bd;
+  font-size: 16px;
+  width: 100%;
+  border: 1px solid transparent;
+}
+
+.contact-us-form .form-gradient-bg .input-text-area-field {
+  flex: 1;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  padding: 12px;
+  color: #a3a7bd;
+  font-size: 16px;
+  width: 100%;
+  min-height: 112px;
+  resize: vertical;
+}
+
+.contact-us-form .form-gradient-bg .input-field:focus {
+  outline: none;
+  border: 1px solid #f8b133;
+}
+
+.contact-us-form .form-gradient-bg .select-menu {
+  position: relative;
+}
+
+.contact-us-form .form-gradient-bg .dropdown-trigger {
+  list-style: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.contact-us-form .form-gradient-bg .select-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.contact-us-form .form-gradient-bg .country-code-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 8px 0;
+  margin-top: 8px;
+  width: 150px;
+  list-style: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+}
+
+.contact-us-form .form-gradient-bg .country-code-menu li {
+  padding: 10px 16px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.contact-us-form .form-gradient-bg .country-code-menu li:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.contact-us-form .form-gradient-bg .dropdown-icon {
+  transition: transform 0.3s ease;
+}
+
+.contact-us-form .form-gradient-bg .select-menu[open] .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+/* Autofill fix */
+.contact-us-form .form-gradient-bg .input-field:-webkit-autofill,
+.contact-us-form .form-gradient-bg .input-field:-webkit-autofill:focus,
+.contact-us-form .form-gradient-bg .input-field:-webkit-autofill:hover,
+.contact-us-form .form-gradient-bg .input-field:-webkit-autofill:active {
+  box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.05) inset !important;
+  -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.05) inset !important;
+  -webkit-text-fill-color: #a3a7bd !important;
+  transition: background-color 9999s ease-in-out 0s !important;
+  border-radius: 100px;
+}
+
+/* Remove spinner on number inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.contact-us-form .contact-card {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: linear-gradient(180deg, rgba(255, 165, 0, 0.12) 0%, rgba(255, 165, 0, 0.02) 100%);
+}
+
+.contact-us-form .contact-card h2 {
+  color: #e7e7e7;
+  font-size: 24px;
+  margin: 0;
+  padding-bottom: 8px;
+}
+
+.contact-us-form .contact-card span {
+  color: #d1d1d1;
+}
+
+.contact-us-form .contact-card .gradient-bg {
+  background: linear-gradient(90deg, #f8b133 0%, #e5332a 99.61%);
+  padding: 20px;
+  border-radius: 16px;
+  width: fit-content;
+  height: fit-content;
+}
+
+.form-btn-gradient {
+  background: linear-gradient(90deg, #f8b133 0%, #e5332a 99.61%) !important;
+  border: none;
+  border-radius: 30px;
+  padding: 20px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.form-btn-gradient:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(229, 51, 42, 0.4);
+}
+
+@media (max-width: 700px) {
+  .form-btn-gradient {
+    width: 100%;
+  }
+}
+{% endstylesheet %}
+
+<section class="contact-us-form">
+  <div class="container">
+    <h2 class="font-60 text-white fw-medium text-center mb-56">
+      Fill out this form to <br />
+      contact us.
+    </h2>
+    <div class="row g-0">
+      <div class="col-xl-5 col-12 pb-32 pb-xl-0 d-flex pr-32">
+        <form class="d-flex flex-column justify-content-between w-100 h-100">
+          <div class="form-gradient-bg mb-40">
+            <!-- name  -->
+            <div class="input pb-16">
+              <label for="html" class="pb-8 text-white font-18 fw-normal"
+                >Your Name</label
+              >
+              <div class="input-section">
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  class="input-field"
+                />
+
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  class="input-field"
+                />
+              </div>
+            </div>
+            <!-- address  -->
+            <div class="input pb-16">
+              <label for="html" class="pb-8 text-color-bd font-18 fw-normal">
+                Your Email Address</label
+              >
+              <div class="input-section">
+                <input
+                  type="text"
+                  placeholder="ex: mynta@gmail.com"
+                  class="input-field"
+                />
+              </div>
+            </div>
+            <!-- Phone Number  -->
+            <div class="input pb-16">
+              <label for="html" class="pb-8 text-color-bd font-18 fw-normal"
+                >Phone Number</label
+              >
+              <div class="input-section">
+                <div class="select-menu-wrapper">
+                  <input
+                    type="number"
+                    placeholder="Area Code"
+                    class="input-field"
+                  />
+
+                  <details class="select-menu">
+                    <summary class="dropdown-trigger">
+                      <img width="" height=""
+                        src="{{ 'dropdown-menu.svg' | asset_url }}"
+                        alt="Dropdown"
+                        class="dropdown-icon"
+                      />
+                    </summary>
+                    <ul class="country-code-menu">
+                      <li>+880 (BD)</li>
+                      <li>+91 (IN)</li>
+                      <li>+1 (US)</li>
+                      <li>+44 (UK)</li>
+                    </ul>
+                  </details>
+                </div>
+
+                <input
+                  type="number"
+                  placeholder="Phone Number"
+                  class="input-field"
+                />
+              </div>
+            </div>
+
+            <!-- address  -->
+            <div class="input pb-16">
+              <label for="html" class="pb-8 text-color-bd font-18 fw-normal">
+                What is the event location you are attending?
+              </label>
+              <div class="input-section">
+                <input
+                  type="text"
+                  placeholder="ex: mynta@gmail.com"
+                  class="input-field"
+                />
+              </div>
+            </div>
+            <!-- address  -->
+            <div class="input pb-16">
+              <label for="html" class="pb-8 text-color-bd font-18 fw-normal">
+                How can we help you?
+              </label>
+              <div class="input-section">
+                <textarea
+                  type="text"
+                  name=""
+                  id=""
+                  placeholder="write messege"
+                  class="input-text-area-field"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-gradient">Submit Now</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-xl-7 col-12">
+        <div class="d-flex flex-column justify-content-between w-100 h-100">
+          <div class="pb-32">
+            <div class="row g-0 pb-24">
+              <div class="col-lg-6 col-12 pr-24 pb-24 pb-lg-0">
+                <div class="contact-card">
+                  <div class="gradient-bg p-20">
+                    <img width="" height=""
+                     src="{{ 'email-icon.svg' | asset_url }}"
+                      alt="event-page-banner-location"
+                    />
+                  </div>
+
+                  <div>
+                    <h2>Email</h2>
+                    <span>mail@skjkskvs.com</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-12">
+                <div class="contact-card">
+                  <div class="gradient-bg p-20">
+                    <img width="" height=""
+                      src="{{ 'phone-icon.svg' | asset_url }}"
+                      alt="event-page-banner-location"
+                    />
+                  </div>
+
+                  <div>
+                    <h2>Phone</h2>
+                    <span>787937103</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row g-0">
+              <div class="col-lg-6 col-12 pr-24 pb-24 pb-lg-0">
+                <div class="contact-card">
+                  <div class="gradient-bg p-20">
+                    <img width="" height=""
+                      src="{{ 'event-page-banner-location.svg' | asset_url }}"
+                      alt="event-page-banner-location"
+                    />
+                  </div>
+
+                  <div>
+                    <h2>Address</h2>
+                    <span>38r923r9kjnvkkv </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-12">
+                <div class="contact-card">
+                  <div class="gradient-bg p-20">
+                    <img width="" height=""
+                     src="{{ 'cvr.svg' | asset_url }}"
+                      alt="event-page-banner-location"
+                    />
+                  </div>
+
+                  <div>
+                    <h2>CVR</h2>
+                    <span>sufhishfis</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img width="" height=""
+              src="{{ 'contact-map-img.png' | asset_url }}"
+              alt="contact-map-img"
+              class="w-100"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact us Form",
+  "tag": "section",
+  "settings": [
+    
+  ],
+  "presets": [
+    {
+      "name": "Contact us Form"
+    }
+  ]
+}
+{% endschema %}
